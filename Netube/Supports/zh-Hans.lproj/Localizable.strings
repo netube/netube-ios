@@ -1,0 +1,37 @@
+/* 
+  Simplified Chinese
+*/
+
+"Home" = "主页";
+"Rules" = "规则";
+"Data" = "数据";
+"Settings" = "设置";
+
+"Connect" = "未链接";
+"Connecting" = "正在连接";
+"Connected" = "已连接";
+
+"Scan QR Code" = "扫描二维码";
+"Generate QR Code" = "生成二维码";
+"Required" = "必填";
+"Host" = "服务器";
+"Port" = "端口";
+"Secret" = "密钥";
+"Cipher" = "加密";
+"Remark" = "标识";
+"Dismiss" = "知道了";
+
+"Language" = "语言";
+"Help" = "帮助";
+"Privacy" = "隐私";
+"About" = "关于";
+
+"Version" = "版本";
+"Share this App" = "分享这个应用程序";
+"Review this App" = "点评这个应用程序";
+"Source Code" = "源代码";
+"Open Source Licenses" = "开源协议";
+"Website" = "网站";
+"Follow us on Twitter" = "在推特上关注我们";
+"Terms of Use" = "使用条款";
+"Privacy Policy" = "隐私政策";

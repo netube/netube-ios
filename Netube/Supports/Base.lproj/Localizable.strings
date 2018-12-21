@@ -1,0 +1,37 @@
+/* 
+  Base
+*/
+
+"Home" = "Home";
+"Rules" = "Rules";
+"Data" = "Data";
+"Settings" = "Settings";
+
+"Connect" = "Connect";
+"Connecting" = "Connecting";
+"Connected" = "Connected";
+
+"Scan QR Code" = "Scan QR Code";
+"Generate QR Code" = "Generate QR Code";
+"Required" = "Required";
+"Host" = "Host";
+"Port" = "Port";
+"Secret" = "Secret";
+"Cipher" = "Cipher";
+"Remark" = "Remark";
+"Dismiss" = "Dismiss";
+
+"Language" = "Language";
+"Help" = "Help";
+"Privacy" = "Privacy";
+"About" = "About";
+
+"Version" = "Version";
+"Share this App" = "Share this App";
+"Review this App" = "Review this App";
+"Source Code" = "Source Code";
+"Open Source Licenses" = "Open Source Licenses";
+"Website" = "Website";
+"Follow us on Twitter" = "Follow us on Twitter";
+"Terms of Use" = "Terms of Use";
+"Privacy Policy" = "Privacy Policy";

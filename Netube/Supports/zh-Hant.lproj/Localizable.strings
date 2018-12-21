@@ -1,0 +1,37 @@
+/* 
+  Chinese
+*/
+
+"Home" = "主頁";
+"Rules" = "規則";
+"Data" = "數據";
+"Settings" = "設定";
+
+"Connect" = "未連接";
+"Connecting" = "正在連接";
+"Connected" = "已連接";
+
+"Scan QR Code" = "掃描二維碼";
+"Generate QR Code" = "生成二維碼";
+"Required" = "必填";
+"Host" = "伺服器";
+"Port" = "端口";
+"Secret" = "金鑰";
+"Cipher" = "加密";
+"Remark" = "標識";
+"Dismiss" = "知道了";
+
+"Language" = "語言";
+"Help" = "幫助";
+"Privacy" = "隱私";
+"About" = "關於";
+
+"Version" = "版本";
+"Share this App" = "分享這個應用程式";
+"Review this App" = "點評這個應用程式";
+"Source Code" = "原始碼";
+"Open Source Licenses" = "開放協議";
+"Website" = "網站";
+"Follow us on Twitter" = "在推特上跟隨我們";
+"Terms of Use" = "使用條款";
+"Privacy Policy" = "隱私政策";
