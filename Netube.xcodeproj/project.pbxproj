@@ -32,7 +32,6 @@
 		85B4E5E71F9B606800781099 /* Cipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4E5E61F9B606800781099 /* Cipher.swift */; };
 		85BD65B31F89E4850050E55A /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BD65B21F89E4850050E55A /* SwitchTableViewCell.swift */; };
 		85D5A83E2156016B00B0DD2A /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D5A83D2156016B00B0DD2A /* ColorExtension.swift */; };
-		85D6316B212DCB0200C025B7 /* LicensesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D6316A212DCB0200C025B7 /* LicensesTableViewController.swift */; };
 		85EACB531FE7C7090004F911 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 85EACB551FE7C7090004F911 /* Localizable.strings */; };
 		85EBEC201FD2701900510F5B /* RulesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EBEC1F1FD2701900510F5B /* RulesTableViewController.swift */; };
 		85EBEC221FD2704400510F5B /* DataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EBEC211FD2704400510F5B /* DataTableViewController.swift */; };
@@ -72,7 +71,6 @@
 		85D0606A1FE7D6D0003DF340 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		85D0606B1FE7D768003DF340 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		85D5A83D2156016B00B0DD2A /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
-		85D6316A212DCB0200C025B7 /* LicensesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensesTableViewController.swift; sourceTree = "<group>"; };
 		85EACB561FE7C7170004F911 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		85EACB571FE7C8FE0004F911 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		85EBEC1F1FD2701900510F5B /* RulesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesTableViewController.swift; sourceTree = "<group>"; };
@@ -120,7 +118,6 @@
 				856F05921F85205A00A5C224 /* LanguageTableViewController.swift */,
 				855786B920D4FD3100A2C229 /* PrivacyTableViewController.swift */,
 				85497C871F85FE3100699EF2 /* AboutTableViewController.swift */,
-				85D6316A212DCB0200C025B7 /* LicensesTableViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -305,7 +302,6 @@
 				85BD65B31F89E4850050E55A /* SwitchTableViewCell.swift in Sources */,
 				85497C881F85FE3100699EF2 /* AboutTableViewController.swift in Sources */,
 				859731A51F850FC800072CA8 /* RightDetailTableViewCell.swift in Sources */,
-				85D6316B212DCB0200C025B7 /* LicensesTableViewController.swift in Sources */,
 				852156D01F92156A0053BA4A /* Idetifier.swift in Sources */,
 				8597319E1F8504AB00072CA8 /* NormalTableViewCell.swift in Sources */,
 				855786B820D4D30100A2C229 /* URLExtension.swift in Sources */,

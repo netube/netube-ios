@@ -29,13 +29,11 @@ struct LocalText {
         static let About: String = NSLocalizedString("About", comment: empty)
         
         static let Version: String = NSLocalizedString("Version", comment: empty)
-        static let ShareThisApp: String = NSLocalizedString("Share this App", comment: empty)
-        static let ReviewThisApp: String = NSLocalizedString("Review this App", comment: empty)
         static let SourceCode: String = NSLocalizedString("Source Code", comment: empty)
-        static let ApacheLicense: String = NSLocalizedString("Apache License, Version 2.0", comment: empty)
-        static let OtherComponents: String = NSLocalizedString("Other Components", comment: empty)
         static let Website: String = NSLocalizedString("Website", comment: empty)
-        static let FollowUsOnTwitter: String = NSLocalizedString("Follow us on Twitter", comment: empty)
+        static let NetubeOnLoopool: String = NSLocalizedString("Netube on Loopool", comment: empty)
         static let TermsOfUse: String = NSLocalizedString("Terms of Use", comment: empty)
         static let PrivacyPolicy: String = NSLocalizedString("Privacy Policy", comment: empty)
+        static let ReviewThisApp: String = NSLocalizedString("Review this App", comment: empty)
+        static let ShareThisApp: String = NSLocalizedString("Share this App", comment: empty)
 }

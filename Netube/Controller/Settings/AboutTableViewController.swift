@@ -7,7 +7,6 @@ final class AboutTableViewController: UITableViewController {
         override func viewWillAppear(_ animated: Bool) {
                 tabBarController?.tabBar.isHidden = true
         }
-        
         override func viewWillDisappear(_ animated: Bool) {
                 tabBarController?.tabBar.isHidden = false
         }
@@ -24,7 +23,7 @@ final class AboutTableViewController: UITableViewController {
         }
         
         override func numberOfSections(in tableView: UITableView) -> Int {
-                return 5
+                return 4
         }
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
                 switch section {
@@ -32,15 +31,12 @@ final class AboutTableViewController: UITableViewController {
                         // Version
                         return 1
                 case 1:
-                        // Source code, licenses and other open source components and licenses
+                        // Source code, website, loopool
                         return 3
                 case 2:
-                        // Website and Contacts
-                        return 2
-                case 3:
                         // ToS and Privay Policy
                         return 2
-                case 4:
+                case 3:
                         // Review and Share
                         return 2
                 default:
@@ -63,7 +59,7 @@ final class AboutTableViewController: UITableViewController {
         }
         override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
                 switch section {
-                case 4:
+                case 3:
                         return space
                 default:
                         return nil
@@ -87,34 +83,19 @@ final class AboutTableViewController: UITableViewController {
                                 cell.detailTextLabel?.text = "↗︎"
                                 return cell
                         case 1:
-                                guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.normalTableViewCell.rawValue, for: indexPath) as? NormalTableViewCell else { return UITableViewCell() }
-                                cell.textLabel?.text = LocalText.ApacheLicense
-                                cell.accessoryType = .disclosureIndicator
+                                guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.rightDetailTableViewCell.rawValue, for: indexPath) as? RightDetailTableViewCell else { return UITableViewCell() }
+                                cell.textLabel?.text = LocalText.Website
+                                cell.detailTextLabel?.text = "↗︎"
                                 return cell
                         case 2:
-                                guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.normalTableViewCell.rawValue, for: indexPath) as? NormalTableViewCell else { return UITableViewCell() }
-                                cell.textLabel?.text = LocalText.OtherComponents
-                                cell.accessoryType = .disclosureIndicator
+                                guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.rightDetailTableViewCell.rawValue, for: indexPath) as? RightDetailTableViewCell else { return UITableViewCell() }
+                                cell.textLabel?.text = LocalText.NetubeOnLoopool
+                                cell.detailTextLabel?.text = "↗︎"
                                 return cell
                         default:
                                 return UITableViewCell()
                         }
                 case 2:
-                        switch indexPath.row {
-                        case 0:
-                                guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.rightDetailTableViewCell.rawValue, for: indexPath) as? RightDetailTableViewCell else { return UITableViewCell() }
-                                cell.textLabel?.text = LocalText.Website
-                                cell.detailTextLabel?.text = "↗︎"
-                                return cell
-                        case 1:
-                                guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.rightDetailTableViewCell.rawValue, for: indexPath) as? RightDetailTableViewCell else { return UITableViewCell() }
-                                cell.textLabel?.text = LocalText.FollowUsOnTwitter
-                                cell.detailTextLabel?.text = "↗︎"
-                                return cell
-                        default:
-                                return UITableViewCell()
-                        }
-                case 3:
                         switch indexPath.row {
                         case 0:
                                 guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.rightDetailTableViewCell.rawValue, for: indexPath) as? RightDetailTableViewCell else { return UITableViewCell() }
@@ -129,7 +110,7 @@ final class AboutTableViewController: UITableViewController {
                         default:
                                 return UITableViewCell()
                         }
-                case 4:
+                case 3:
                         switch indexPath.row {
                         case 0:
                                 guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.normalTableViewCell.rawValue, for: indexPath) as? NormalTableViewCell else { return UITableViewCell() }
@@ -159,23 +140,14 @@ final class AboutTableViewController: UITableViewController {
                                 let sourceCode: URL = URL.new("https://netube.org/sources/ios")
                                 open(url: sourceCode)
                         case 1:
-                                navigationController?.pushViewController(LicensesTableViewController(), animated: true)
+                                let netubeWebsite: URL = URL.new("https://netube.org")
+                                open(url: netubeWebsite)
                         case 2:
-                                navigationController?.pushViewController(LicensesTableViewController(), animated: true)
+                                openLoopool()
                         default:
                                 break
                         }
                 case 2:
-                        switch indexPath.row {
-                        case 0:
-                                let netube: URL = URL.new("https://netube.org")
-                                open(url: netube)
-                        case 1:
-                                openTwitter()
-                        default:
-                                break
-                        }
-                case 3:
                         switch indexPath.row {
                         case 0:
                                 let terms: URL = URL.new("https://netube.org/terms/ios")
@@ -186,7 +158,7 @@ final class AboutTableViewController: UITableViewController {
                         default:
                                 break
                         }
-                case 4:
+                case 3:
                         switch indexPath.row {
                         case 0:
                                 SKStoreReviewController.requestReview()
@@ -207,12 +179,12 @@ final class AboutTableViewController: UITableViewController {
                 present(activity, animated: true, completion: nil)
         }
         
-        private func openTwitter() {
-                let screenName: String = "NetubeApp"
-                let twitterURL: URL = URL.new("twitter://user?screen_name=\(screenName)")
-                let webURL: URL = URL.new("https://twitter.com/\(screenName)")
-                if UIApplication.shared.canOpenURL(twitterURL) {
-                        UIApplication.shared.open(twitterURL, options: [:], completionHandler: nil)
+        private func openLoopool() {
+                let username: String = "netube"
+                let loopoolURL: URL = URL.new("loopool://user?username=\(username)")
+                let webURL: URL = URL.new("https://loopool.com/\(username)")
+                if UIApplication.shared.canOpenURL(loopoolURL) {
+                        UIApplication.shared.open(loopoolURL, options: [:], completionHandler: nil)
                 } else {
                         open(url: webURL)
                 }
