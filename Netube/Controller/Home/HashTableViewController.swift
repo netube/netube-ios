@@ -18,11 +18,12 @@
 
 import UIKit
 
-final class CipherTableViewController: UITableViewController {
+final class HashTableViewController: UITableViewController {
         
-        var selectedCipher: Cipher = .XCHACHA20_POLY1305 {
+        
+        var selectedHash: Hash = .SHA2_256 {
                 didSet {
-                        performSelection(cipher: selectedCipher)
+                        performSelection(hash: selectedHash)
                 }
         }
         
@@ -32,7 +33,7 @@ final class CipherTableViewController: UITableViewController {
         
         override func viewDidLoad() {
                 super.viewDidLoad()
-                title = LocalText.Cipher
+                title = LocalText.Hash
                 navigationController?.navigationBar.tintColor = UIColor.primary
                 
                 tableView.register(NormalTableViewCell.self, forCellReuseIdentifier: Idetifier.normalTableViewCell.rawValue)
@@ -44,7 +45,7 @@ final class CipherTableViewController: UITableViewController {
         }
         
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-                return 4
+                return 3
         }
         
         private let space: String = " "
@@ -59,17 +60,15 @@ final class CipherTableViewController: UITableViewController {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.normalTableViewCell.rawValue, for: indexPath) as? NormalTableViewCell else { return UITableViewCell() }
                 switch indexPath.row {
                 case 0:
-                        cell.textLabel?.text = Cipher.XCHACHA20_POLY1305.rawValue
+                        cell.textLabel?.text = Hash.SHA2_256.rawValue
                 case 1:
-                        cell.textLabel?.text = Cipher.CHACHA20_POLY1305.rawValue
+                        cell.textLabel?.text = Hash.SHA2_384.rawValue
                 case 2:
-                        cell.textLabel?.text = Cipher.AES_256_GCM.rawValue
-                case 3:
-                        cell.textLabel?.text = Cipher.AES_128_GCM.rawValue
+                        cell.textLabel?.text = Hash.SHA2_512.rawValue
                 default:
                         break
                 }
-                if cell.textLabel?.text == selectedCipher.rawValue {
+                if cell.textLabel?.text == selectedHash.rawValue {
                         cell.accessoryType = .checkmark
                 }
                 return cell
@@ -81,28 +80,26 @@ final class CipherTableViewController: UITableViewController {
                 tableView.deselectRow(at: indexPath, animated: true)
                 switch indexPath.row {
                 case 0:
-                        selectedCipher = .XCHACHA20_POLY1305
+                        selectedHash = .SHA2_256
                 case 1:
-                        selectedCipher = .CHACHA20_POLY1305
+                        selectedHash = .SHA2_384
                 case 2:
-                        selectedCipher = .AES_256_GCM
-                case 3:
-                        selectedCipher = .AES_128_GCM
+                        selectedHash = .SHA2_512
                 default:
                         break
                 }
         }
         
-        private func performSelection(cipher: Cipher) {
+        private func performSelection(hash: Hash) {
                 let count: Int = navigationController?.viewControllers.count ?? 2
                 let backVC: UIViewController? = navigationController?.viewControllers[count - 2]
                 
                 if let addServerTVC = backVC as? AddServerTableViewController {
-                        addServerTVC.usingCipher = cipher
+                        addServerTVC.usingHash = hash
                         addServerTVC.tableView.reloadData()
                         navigationController?.popToViewController(addServerTVC, animated: true)
                 } else if let editServerTVC = backVC as? EditServerTableViewController {
-                        editServerTVC.server?.cipher = cipher
+                        editServerTVC.server?.hash = hash
                         editServerTVC.tableView.reloadData()
                         navigationController?.popToViewController(editServerTVC, animated: true)
                 }

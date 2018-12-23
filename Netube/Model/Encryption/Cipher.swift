@@ -16,12 +16,9 @@
 // -------------------------------------------------------------------------
 //
 
-struct Configuration {
-        var host: String
-        var port: Int
-        var secret: String
-        var name: String
-        var cipher: Cipher
-        var hash: Hash
-        var keyExchange: KeyExchange
+enum Cipher: String {
+        case XCHACHA20_POLY1305
+        case CHACHA20_POLY1305
+        case AES_256_GCM
+        case AES_128_GCM
 }

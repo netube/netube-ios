@@ -19,9 +19,12 @@
 import UIKit
 
 final class AddServerTableViewController: UITableViewController, UITextFieldDelegate {
+        
         private var fields: [UITextField] = Array(repeating: UITextField(), count: 4)
         
-        var usingCipher: Cipher = .chacha20poly1305
+        var usingCipher: Cipher = .XCHACHA20_POLY1305
+        var usingHash: Hash = .SHA2_256
+        var usingKeyExchange: KeyExchange = .X25519
         
         private var newServer: Configuration?
         
@@ -31,7 +34,7 @@ final class AddServerTableViewController: UITableViewController, UITextFieldDele
         
         override func viewDidLoad() {
                 super.viewDidLoad()
-                title = LocalText.Host
+                title = LocalText.AddServer
                 navigationController?.navigationBar.tintColor = UIColor.primary
                 
                 tableView.register(NormalTableViewCell.self, forCellReuseIdentifier: Idetifier.normalTableViewCell.rawValue)
@@ -45,11 +48,14 @@ final class AddServerTableViewController: UITableViewController, UITextFieldDele
         
         @objc private func confirm() {
                 if (fields.filter { $0.hasCharacters }).count == fields.count {
-                        newServer = Configuration(host: fields[0].text ?? "error",
-                                                  port: fields[1].text.convertToInteger,
-                                                  secret: fields[2].text ?? "error",
-                                                  remark: fields[3].text ?? "error",
-                                                  cipher: usingCipher)
+                        newServer = Configuration(
+                                host: fields[0].text ?? "error",
+                                port: fields[1].text.convertToInteger,
+                                secret: fields[2].text ?? "error",
+                                name: fields[3].text ?? "error",
+                                cipher: usingCipher,
+                                hash: usingHash,
+                                keyExchange: usingKeyExchange)
                         let count: Int = navigationController?.viewControllers.count ?? 2
                         if let homeTVC = navigationController?.viewControllers[count - 2] as? HomeTableViewController {
                                 homeTVC.servers.append(newServer!)
@@ -89,14 +95,16 @@ final class AddServerTableViewController: UITableViewController, UITextFieldDele
         }
         
         override func numberOfSections(in tableView: UITableView) -> Int {
-                return 2
+                return 3
         }
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
                 switch section {
                 case 0:
                         return 1
                 case 1:
-                        return 5
+                        return 4
+                case 2:
+                        return 3
                 default:
                         return 1
                 }
@@ -108,7 +116,7 @@ final class AddServerTableViewController: UITableViewController, UITextFieldDele
         }
         override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
                 switch section {
-                case 1:
+                case 2:
                         return space
                 default:
                         return nil
@@ -141,20 +149,32 @@ final class AddServerTableViewController: UITableViewController, UITextFieldDele
                                 cell.textField.isSecureTextEntry = true
                                 fields[2] = cell.textField
                         case 3:
-                                cell.label.text = LocalText.Remark
+                                cell.label.text = LocalText.ServerName
                                 cell.textField.placeholder = LocalText.Required
                                 cell.textField.returnKeyType = .default
                                 cell.textField.autocapitalizationType = .words
                                 cell.textField.autocorrectionType = .yes
                                 cell.textField.spellCheckingType = .yes
                                 fields[3] = cell.textField
-                        case 4:
-                                guard let cipherCell = tableView.dequeueReusableCell(withIdentifier: Idetifier.rightDetailTableViewCell.rawValue, for: indexPath) as? RightDetailTableViewCell else { return UITableViewCell() }
-                                cipherCell.textLabel?.text = LocalText.Cipher
-                                cipherCell.textLabel?.textColor = UIColor.darkGray
-                                cipherCell.detailTextLabel?.text = usingCipher.rawValue
-                                cipherCell.accessoryType = .disclosureIndicator
-                                return cipherCell
+                        default:
+                                break
+                        }
+                        return cell
+                case 2:
+                        guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.rightDetailTableViewCell.rawValue, for: indexPath) as? RightDetailTableViewCell else { return UITableViewCell() }
+                        switch indexPath.row {
+                        case 0:
+                                cell.textLabel?.text = LocalText.Cipher
+                                cell.detailTextLabel?.text = usingCipher.rawValue
+                                cell.accessoryType = .disclosureIndicator
+                        case 1:
+                                cell.textLabel?.text = LocalText.Hash
+                                cell.detailTextLabel?.text = usingHash.rawValue
+                                cell.accessoryType = .disclosureIndicator
+                        case 2:
+                                cell.textLabel?.text = LocalText.KeyExchange
+                                cell.detailTextLabel?.text = usingKeyExchange.rawValue
+                                cell.accessoryType = .disclosureIndicator
                         default:
                                 break
                         }
@@ -166,15 +186,24 @@ final class AddServerTableViewController: UITableViewController, UITextFieldDele
         
         override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
                 tableView.deselectRow(at: indexPath, animated: true)
-                if indexPath.section == 1 {
-                        switch indexPath.row {
-                        case 4:
-                                let cipherTVC: CipherTableViewController = CipherTableViewController()
-                                cipherTVC.selectedCipher = usingCipher
-                                navigationController?.pushViewController(cipherTVC, animated: true)
-                        default:
-                                break
-                        }
+                
+                let row: Int = indexPath.section == 2 ? indexPath.row : 64
+                
+                switch row {
+                case 0:
+                        let cipherTVC = CipherTableViewController()
+                        cipherTVC.selectedCipher = usingCipher
+                        navigationController?.pushViewController(cipherTVC, animated: true)
+                case 1:
+                        let hashTVC = HashTableViewController()
+                        hashTVC.selectedHash = usingHash
+                        navigationController?.pushViewController(hashTVC, animated: true)
+                case 2:
+                        let keyExchangeTVC = KeyExchangeTableViewController()
+                        keyExchangeTVC.selectedKeyExchange = usingKeyExchange
+                        navigationController?.pushViewController(keyExchangeTVC, animated: true)
+                default:
+                        break
                 }
         }
 }

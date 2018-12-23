@@ -11,14 +11,18 @@
 "Connecting" = "正在连接";
 "Connected" = "已连接";
 
+"Add Server" = "添加服务";
+"Edit Server" = "修改服务";
 "Scan QR Code" = "扫描二维码";
 "Generate QR Code" = "生成二维码";
 "Required" = "必填";
 "Host" = "服务器";
 "Port" = "端口";
-"Secret" = "密钥";
+"Secret" = "密码";
 "Cipher" = "加密";
-"Remark" = "标识";
+"Hash" = "哈希";
+"Key Exchange" = "交换";
+"Server Name" = "名称";
 "Dismiss" = "知道了";
 
 "Language" = "语言";

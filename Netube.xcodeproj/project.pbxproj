@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37549D8821CF5A3A00A0F3BB /* Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37549D8721CF5A3A00A0F3BB /* Hash.swift */; };
+		37549D8A21CF5AB400A0F3BB /* KeyExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37549D8921CF5AB400A0F3BB /* KeyExchange.swift */; };
+		37549D8C21CF661900A0F3BB /* HashTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37549D8B21CF661900A0F3BB /* HashTableViewController.swift */; };
+		37549D8E21CF6E3900A0F3BB /* KeyExchangeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37549D8D21CF6E3900A0F3BB /* KeyExchangeTableViewController.swift */; };
 		852156D01F92156A0053BA4A /* Idetifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852156CF1F92156A0053BA4A /* Idetifier.swift */; };
 		85276AA01FE6BFEC001EF4B7 /* LocalText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85276A9F1FE6BFEC001EF4B7 /* LocalText.swift */; };
 		85310CA21F9BA79B00C5DCD7 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85310CA11F9BA79B00C5DCD7 /* StringExtension.swift */; };
@@ -39,6 +43,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37549D8721CF5A3A00A0F3BB /* Hash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hash.swift; sourceTree = "<group>"; };
+		37549D8921CF5AB400A0F3BB /* KeyExchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyExchange.swift; sourceTree = "<group>"; };
+		37549D8B21CF661900A0F3BB /* HashTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTableViewController.swift; sourceTree = "<group>"; };
+		37549D8D21CF6E3900A0F3BB /* KeyExchangeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyExchangeTableViewController.swift; sourceTree = "<group>"; };
 		852156CF1F92156A0053BA4A /* Idetifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Idetifier.swift; sourceTree = "<group>"; };
 		85276A9F1FE6BFEC001EF4B7 /* LocalText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalText.swift; sourceTree = "<group>"; };
 		85310CA11F9BA79B00C5DCD7 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -89,6 +97,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37549D8621CF5A0700A0F3BB /* Encryption */ = {
+			isa = PBXGroup;
+			children = (
+				85B4E5E61F9B606800781099 /* Cipher.swift */,
+				37549D8721CF5A3A00A0F3BB /* Hash.swift */,
+				37549D8921CF5AB400A0F3BB /* KeyExchange.swift */,
+			);
+			path = Encryption;
+			sourceTree = "<group>";
+		};
 		85310CA01F9BA76E00C5DCD7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +125,8 @@
 				85497C821F855CEF00699EF2 /* AddServerTableViewController.swift */,
 				857CEDE01F949C7400EE7A27 /* EditServerTableViewController.swift */,
 				85989EC11F9114D900817C90 /* CipherTableViewController.swift */,
+				37549D8B21CF661900A0F3BB /* HashTableViewController.swift */,
+				37549D8D21CF6E3900A0F3BB /* KeyExchangeTableViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -144,7 +164,6 @@
 				859FFE7F1F815EAA0096B407 /* Controller */,
 				85B4E5E31F9B5FFE00781099 /* Model */,
 				859FFE861F81DA0A0096B407 /* View */,
-				85F4BF0A2125639F00BB86A8 /* Library */,
 				85310CA01F9BA76E00C5DCD7 /* Extensions */,
 				859FFE831F8167980096B407 /* Supports */,
 			);
@@ -184,6 +203,7 @@
 				859731A61F85185D00072CA8 /* SubtitleTableViewCell.swift */,
 				85BD65B21F89E4850050E55A /* SwitchTableViewCell.swift */,
 				85989EBD1F90818000817C90 /* TextFieldTableViewCell.swift */,
+				85F4BF0B212563C300BB86A8 /* Image.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -191,8 +211,8 @@
 		85B4E5E31F9B5FFE00781099 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				37549D8621CF5A0700A0F3BB /* Encryption */,
 				85B4E5E41F9B603400781099 /* Configuration.swift */,
-				85B4E5E61F9B606800781099 /* Cipher.swift */,
 				85276A9F1FE6BFEC001EF4B7 /* LocalText.swift */,
 			);
 			path = Model;
@@ -212,14 +232,6 @@
 				85EBEC211FD2704400510F5B /* DataTableViewController.swift */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		85F4BF0A2125639F00BB86A8 /* Library */ = {
-			isa = PBXGroup;
-			children = (
-				85F4BF0B212563C300BB86A8 /* Image.swift */,
-			);
-			path = Library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85989EBE1F90818000817C90 /* TextFieldTableViewCell.swift in Sources */,
+				37549D8A21CF5AB400A0F3BB /* KeyExchange.swift in Sources */,
 				859FFE811F815FCA0096B407 /* HomeTableViewController.swift in Sources */,
 				85BD65B31F89E4850050E55A /* SwitchTableViewCell.swift in Sources */,
 				85497C881F85FE3100699EF2 /* AboutTableViewController.swift in Sources */,
@@ -306,6 +319,9 @@
 				8597319E1F8504AB00072CA8 /* NormalTableViewCell.swift in Sources */,
 				855786B820D4D30100A2C229 /* URLExtension.swift in Sources */,
 				855786BA20D4FD3100A2C229 /* PrivacyTableViewController.swift in Sources */,
+				37549D8821CF5A3A00A0F3BB /* Hash.swift in Sources */,
+				37549D8C21CF661900A0F3BB /* HashTableViewController.swift in Sources */,
+				37549D8E21CF6E3900A0F3BB /* KeyExchangeTableViewController.swift in Sources */,
 				85497C831F855CEF00699EF2 /* AddServerTableViewController.swift in Sources */,
 				859FFE6B1F8155860096B407 /* AppDelegate.swift in Sources */,
 				85D5A83E2156016B00B0DD2A /* ColorExtension.swift in Sources */,

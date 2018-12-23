@@ -1,4 +1,4 @@
-//
+///
 // -------------------------------------------------------------------------
 // Copyright 2018 Bing Djeung
 //
@@ -16,12 +16,6 @@
 // -------------------------------------------------------------------------
 //
 
-struct Configuration {
-        var host: String
-        var port: Int
-        var secret: String
-        var name: String
-        var cipher: Cipher
-        var hash: Hash
-        var keyExchange: KeyExchange
+enum KeyExchange: String {
+        case X25519
 }

@@ -110,7 +110,7 @@ final class HomeTableViewController: UITableViewController {
                 case 2:
                         guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.rightDetailTableViewCell.rawValue, for: indexPath) as? RightDetailTableViewCell else { return UITableViewCell() }
                         if servers.count >= indexPath.row {
-                                cell.textLabel?.text = servers[indexPath.row].remark
+                                cell.textLabel?.text = servers[indexPath.row].name
                         } else {
                                 cell.textLabel?.text = "error"
                         }
@@ -145,7 +145,7 @@ final class HomeTableViewController: UITableViewController {
                 if indexPath.section == 2 {
                         if servers.count >= indexPath.row {
                                 let editServerTVC = EditServerTableViewController()
-                                editServerTVC.configuration = servers[indexPath.row]
+                                editServerTVC.server = servers[indexPath.row]
                                 editServerTVC.serverNumber = indexPath.row
                                 navigationController?.pushViewController(editServerTVC, animated: true)
                         }

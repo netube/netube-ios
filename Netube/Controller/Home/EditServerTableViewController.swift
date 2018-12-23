@@ -19,11 +19,11 @@
 import UIKit
 
 final class EditServerTableViewController: UITableViewController, UITextFieldDelegate {
+        
         private var fields: [UITextField] = Array(repeating: UITextField(), count: 4)
         
         var serverNumber: Int?
-        var usingCipher: Cipher = .chacha20poly1305
-        var configuration: Configuration?
+        var server: Configuration?
         
         override func viewWillAppear(_ animated: Bool) {
                 tabBarController?.tabBar.isHidden = true
@@ -31,7 +31,7 @@ final class EditServerTableViewController: UITableViewController, UITextFieldDel
         
         override func viewDidLoad() {
                 super.viewDidLoad()
-                title = LocalText.Host
+                title = LocalText.EditServer
                 navigationController?.navigationBar.tintColor = UIColor.primary
                 
                 tableView.register(TextFieldTableViewCell.self, forCellReuseIdentifier: Idetifier.textFieldTableViewCell.rawValue)
@@ -45,14 +45,13 @@ final class EditServerTableViewController: UITableViewController, UITextFieldDel
         
         @objc private func confirm() {
                 if (fields.filter { $0.hasCharacters }).count == fields.count {
-                        configuration = Configuration(host: fields[0].text ?? "error",
-                                                      port: fields[1].text.convertToInteger,
-                                                      secret: fields[2].text ?? "error",
-                                                      remark: fields[3].text ?? "error",
-                                                      cipher: configuration?.cipher ?? usingCipher)
+                        server?.host = fields[0].text ?? "error"
+                        server?.port = fields[1].text.convertToInteger
+                        server?.secret = fields[2].text ?? "error"
+                        server?.name = fields[3].text ?? "error"
                         let count: Int = navigationController?.viewControllers.count ?? 2
                         if let homeTVC = navigationController?.viewControllers[count - 2] as? HomeTableViewController {
-                                homeTVC.servers[serverNumber!] = configuration!
+                                homeTVC.servers[serverNumber!] = server!
                                 homeTVC.tableView.reloadData()
                                 navigationController?.popToViewController(homeTVC, animated: true)
                         }
@@ -89,14 +88,16 @@ final class EditServerTableViewController: UITableViewController, UITextFieldDel
         }
         
         override func numberOfSections(in tableView: UITableView) -> Int {
-                return 2
+                return 3
         }
         
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
                 switch section {
                 case 0:
-                        return 5
+                        return 4
                 case 1:
+                        return 3
+                case 2:
                         return 1
                 default:
                         return 1
@@ -109,12 +110,10 @@ final class EditServerTableViewController: UITableViewController, UITextFieldDel
         }
         override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
                 switch section {
-                case 0:
-                        return nil
-                case 1:
+                case 2:
                         return space
                 default:
-                        return space
+                        return nil
                 }
         }
         
@@ -126,43 +125,55 @@ final class EditServerTableViewController: UITableViewController, UITextFieldDel
                         switch indexPath.row {
                         case 0:
                                 cell.label.text = LocalText.Host
-                                cell.textField.text = configuration?.host
+                                cell.textField.text = server?.host
                                 cell.textField.placeholder = LocalText.Required
                                 cell.textField.keyboardType = .URL
                                 fields[0] = cell.textField
                         case 1:
                                 cell.label.text = LocalText.Port
-                                cell.textField.text = configuration?.port.description
+                                cell.textField.text = server?.port.description
                                 cell.textField.placeholder = LocalText.Required
                                 cell.textField.keyboardType = .numberPad
                                 fields[1] = cell.textField
                         case 2:
                                 cell.label.text = LocalText.Secret
-                                cell.textField.text = configuration?.secret
+                                cell.textField.text = server?.secret
                                 cell.textField.placeholder = LocalText.Required
                                 cell.textField.isSecureTextEntry = true
                                 fields[2] = cell.textField
                         case 3:
-                                cell.label.text = LocalText.Remark
-                                cell.textField.text = configuration?.remark
+                                cell.label.text = LocalText.ServerName
+                                cell.textField.text = server?.name
                                 cell.textField.placeholder = LocalText.Required
                                 cell.textField.returnKeyType = .default
                                 cell.textField.autocapitalizationType = .words
                                 cell.textField.autocorrectionType = .yes
                                 cell.textField.spellCheckingType = .yes
                                 fields[3] = cell.textField
-                        case 4:
-                                guard let cipherCell = tableView.dequeueReusableCell(withIdentifier: Idetifier.rightDetailTableViewCell.rawValue, for: indexPath) as? RightDetailTableViewCell else { return UITableViewCell() }
-                                cipherCell.textLabel?.text = LocalText.Cipher
-                                cipherCell.textLabel?.textColor = UIColor.darkGray
-                                cipherCell.detailTextLabel?.text = configuration?.cipher.rawValue
-                                cipherCell.accessoryType = .disclosureIndicator
-                                return cipherCell
                         default:
                                 break
                         }
                         return cell
                 case 1:
+                        guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.rightDetailTableViewCell.rawValue, for: indexPath) as? RightDetailTableViewCell else { return UITableViewCell() }
+                        switch indexPath.row {
+                        case 0:
+                                cell.textLabel?.text = LocalText.Cipher
+                                cell.detailTextLabel?.text = server?.cipher.rawValue
+                                cell.accessoryType = .disclosureIndicator
+                        case 1:
+                                cell.textLabel?.text = LocalText.Hash
+                                cell.detailTextLabel?.text = server?.hash.rawValue
+                                cell.accessoryType = .disclosureIndicator
+                        case 2:
+                                cell.textLabel?.text = LocalText.KeyExchange
+                                cell.detailTextLabel?.text = server?.keyExchange.rawValue
+                                cell.accessoryType = .disclosureIndicator
+                        default:
+                                break
+                        }
+                        return cell
+                case 2:
                         guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.normalTableViewCell.rawValue, for: indexPath) as? NormalTableViewCell else { return UITableViewCell() }
                         cell.textLabel?.text = LocalText.GenerateQRCode
                         return cell
@@ -173,15 +184,24 @@ final class EditServerTableViewController: UITableViewController, UITextFieldDel
         
         override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
                 tableView.deselectRow(at: indexPath, animated: true)
-                if indexPath.section == 0 {
-                        switch indexPath.row {
-                        case 4:
-                                let cipherTVC: CipherTableViewController = CipherTableViewController()
-                                cipherTVC.selectedCipher = configuration?.cipher ?? usingCipher
-                                navigationController?.pushViewController(cipherTVC, animated: true)
-                        default:
-                                break
-                        }
+                
+                let row: Int = indexPath.section == 1 ? indexPath.row : 64
+                
+                switch row {
+                case 0:
+                        let cipherTVC = CipherTableViewController()
+                        cipherTVC.selectedCipher = server?.cipher ?? .XCHACHA20_POLY1305
+                        navigationController?.pushViewController(cipherTVC, animated: true)
+                case 1:
+                        let hashTVC = HashTableViewController()
+                        hashTVC.selectedHash = server?.hash ?? .SHA2_256
+                        navigationController?.pushViewController(hashTVC, animated: true)
+                case 2:
+                        let keyExchangeTVC = KeyExchangeTableViewController()
+                        keyExchangeTVC.selectedKeyExchange = server?.keyExchange ?? .X25519
+                        navigationController?.pushViewController(keyExchangeTVC, animated: true)
+                default:
+                        break
                 }
         }
 }

@@ -31,6 +31,8 @@ struct LocalText {
         static let Connecting: String = NSLocalizedString("Connecting", comment: empty)
         static let Connected: String = NSLocalizedString("Connected", comment: empty)
         
+        static let AddServer: String = NSLocalizedString("Add Server", comment: empty)
+        static let EditServer: String = NSLocalizedString("Edit Server", comment: empty)
         static let ScanQRCode: String = NSLocalizedString("Scan QR Code", comment: empty)
         static let GenerateQRCode: String = NSLocalizedString("Generate QR Code", comment: empty)
         static let Required: String = NSLocalizedString("Required", comment: empty)
@@ -38,7 +40,9 @@ struct LocalText {
         static let Port: String = NSLocalizedString("Port", comment: empty)
         static let Secret: String = NSLocalizedString("Secret", comment: empty)
         static let Cipher: String = NSLocalizedString("Cipher", comment: empty)
-        static let Remark: String = NSLocalizedString("Remark", comment: empty)
+        static let Hash: String = NSLocalizedString("Hash", comment: empty)
+        static let KeyExchange: String = NSLocalizedString("Key Exchange", comment: empty)
+        static let ServerName: String = NSLocalizedString("Server Name", comment: empty)
         static let Dismiss: String = NSLocalizedString("Dismiss", comment: empty)
         
         static let Language: String = NSLocalizedString("Language", comment: empty)

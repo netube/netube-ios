@@ -79,7 +79,6 @@ class TextFieldTableViewCell: UITableViewCell {
                         constant: 0
                 )
                 contentView.addConstraints([top, bottom, left, width])
-                label.textColor = UIColor.darkGray
         }
         
         private func setupTextField() {

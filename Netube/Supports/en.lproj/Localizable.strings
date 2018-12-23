@@ -11,6 +11,8 @@
 "Connecting" = "Connecting";
 "Connected" = "Connected";
 
+"Add Server" = "Add Server";
+"Edit Server" = "Edit Server";
 "Scan QR Code" = "Scan QR Code";
 "Generate QR Code" = "Generate QR Code";
 "Required" = "Required";
@@ -18,7 +20,9 @@
 "Port" = "Port";
 "Secret" = "Secret";
 "Cipher" = "Cipher";
-"Remark" = "Remark";
+"Hash" = "Hash";
+"Key Exchange" = "Key Exchange";
+"Server Name" = "Name";
 "Dismiss" = "Dismiss";
 
 "Language" = "Language";

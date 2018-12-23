@@ -16,8 +16,9 @@
 // -------------------------------------------------------------------------
 //
 
-enum Cipher: String {
-        case chacha20poly1305
-        case aes256gcm
-        case aes128gcm
+
+enum Hash: String {
+        case SHA2_256
+        case SHA2_384
+        case SHA2_512
 }
