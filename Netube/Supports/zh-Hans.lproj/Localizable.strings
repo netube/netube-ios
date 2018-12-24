@@ -22,7 +22,7 @@
 "Cipher" = "加密";
 "Hash" = "哈希";
 "Key Exchange" = "交换";
-"Server Name" = "名称";
+"Remark" = "标识";
 "Dismiss" = "知道了";
 
 "Language" = "语言";

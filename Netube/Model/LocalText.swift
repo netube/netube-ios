@@ -42,7 +42,7 @@ struct LocalText {
         static let Cipher: String = NSLocalizedString("Cipher", comment: empty)
         static let Hash: String = NSLocalizedString("Hash", comment: empty)
         static let KeyExchange: String = NSLocalizedString("Key Exchange", comment: empty)
-        static let ServerName: String = NSLocalizedString("Server Name", comment: empty)
+        static let Remark: String = NSLocalizedString("Remark", comment: empty)
         static let Dismiss: String = NSLocalizedString("Dismiss", comment: empty)
         
         static let Language: String = NSLocalizedString("Language", comment: empty)

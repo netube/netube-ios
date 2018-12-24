@@ -149,7 +149,7 @@ final class AddServerTableViewController: UITableViewController, UITextFieldDele
                                 cell.textField.isSecureTextEntry = true
                                 fields[2] = cell.textField
                         case 3:
-                                cell.label.text = LocalText.ServerName
+                                cell.label.text = LocalText.Remark
                                 cell.textField.placeholder = LocalText.Required
                                 cell.textField.returnKeyType = .default
                                 cell.textField.autocapitalizationType = .words

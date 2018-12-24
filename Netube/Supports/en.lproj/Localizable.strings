@@ -22,7 +22,7 @@
 "Cipher" = "Cipher";
 "Hash" = "Hash";
 "Key Exchange" = "Key Exchange";
-"Server Name" = "Name";
+"Remark" = "Remark";
 "Dismiss" = "Dismiss";
 
 "Language" = "Language";

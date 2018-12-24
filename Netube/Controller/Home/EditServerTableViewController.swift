@@ -142,7 +142,7 @@ final class EditServerTableViewController: UITableViewController, UITextFieldDel
                                 cell.textField.isSecureTextEntry = true
                                 fields[2] = cell.textField
                         case 3:
-                                cell.label.text = LocalText.ServerName
+                                cell.label.text = LocalText.Remark
                                 cell.textField.text = server?.name
                                 cell.textField.placeholder = LocalText.Required
                                 cell.textField.returnKeyType = .default
