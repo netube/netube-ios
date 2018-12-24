@@ -41,7 +41,7 @@ final class AboutTableViewController: UITableViewController {
         }
         
         override func numberOfSections(in tableView: UITableView) -> Int {
-                return 4
+                return 5
         }
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
                 switch section {
@@ -57,18 +57,12 @@ final class AboutTableViewController: UITableViewController {
                 case 3:
                         // Review and Share
                         return 2
+                case 4:
+                        // Made by Cantonese in Cantonia
+                        return 1
                 default:
                         return 1
                 }
-        }
-        
-        override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-                guard let header = view as? UITableViewHeaderFooterView else { return }
-                header.textLabel?.font = UIFont.systemFont(ofSize: 11)
-        }
-        override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
-                guard let footer = view as? UITableViewHeaderFooterView else { return }
-                footer.textLabel?.font = UIFont.systemFont(ofSize: 11)
         }
         
         private let space: String = " "
@@ -77,7 +71,7 @@ final class AboutTableViewController: UITableViewController {
         }
         override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
                 switch section {
-                case 3:
+                case 4:
                         return space
                 default:
                         return nil
@@ -107,7 +101,7 @@ final class AboutTableViewController: UITableViewController {
                                 return cell
                         case 2:
                                 guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.rightDetailTableViewCell.rawValue, for: indexPath) as? RightDetailTableViewCell else { return UITableViewCell() }
-                                cell.textLabel?.text = LocalText.NetubeOnLoopool
+                                cell.textLabel?.text = LocalText.FollowUsOnTwitter
                                 cell.detailTextLabel?.text = "↗︎"
                                 return cell
                         default:
@@ -144,6 +138,35 @@ final class AboutTableViewController: UITableViewController {
                         default:
                                 return UITableViewCell()
                         }
+                case 4:
+                        guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.normalTableViewCell.rawValue, for: indexPath) as? NormalTableViewCell else { return UITableViewCell() }
+                        
+                        // Uncomment to enable color
+                        /*
+                        let gradient: CAGradientLayer = CAGradientLayer()
+                        gradient.colors = [UIColor.primary.cgColor, UIColor.red.cgColor]
+                        gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
+                        gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
+                        gradient.frame = cell.bounds
+                        cell.layer.insertSublayer(gradient, at: 0)
+                        cell.textLabel?.text = LocalText.MadeByCantoneseInCantonia
+                        cell.textLabel?.textAlignment = .center
+                        cell.mask = cell.textLabel
+                        */
+                        
+                        let gradient: CAGradientLayer = CAGradientLayer()
+                        gradient.colors = [UIColor.lightText.cgColor, UIColor.darkText.cgColor]
+                        
+                        // Uncomment to enable [left to right]
+                        // gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
+                        // gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
+                        
+                        gradient.frame = cell.bounds
+                        cell.layer.insertSublayer(gradient, at: 0)
+                        cell.textLabel?.text = LocalText.MadeByCantoneseInCantonia
+                        cell.textLabel?.textAlignment = .center
+                        cell.mask = cell.textLabel
+                        return cell
                 default:
                         return UITableViewCell()
                 }
@@ -161,7 +184,8 @@ final class AboutTableViewController: UITableViewController {
                                 let netubeWebsite: URL = URL.new("https://netube.org")
                                 open(url: netubeWebsite)
                         case 2:
-                                openLoopool()
+                                // openLoopool()
+                                openTwitter()
                         default:
                                 break
                         }
@@ -185,6 +209,9 @@ final class AboutTableViewController: UITableViewController {
                         default:
                                 break
                         }
+                case 4:
+                        let cantoniaWebsite: URL = URL.new("https://cantonia.org")
+                        open(url: cantoniaWebsite)
                 default:
                         break
                 }
@@ -203,6 +230,16 @@ final class AboutTableViewController: UITableViewController {
                 let webURL: URL = URL.new("https://loopool.com/\(username)")
                 if UIApplication.shared.canOpenURL(loopoolURL) {
                         UIApplication.shared.open(loopoolURL, options: [:], completionHandler: nil)
+                } else {
+                        open(url: webURL)
+                }
+        }
+        private func openTwitter() {
+                let screenName: String = "NetubeApp"
+                let twitterURL: URL = URL.new("twitter://user?screen_name=\(screenName)")
+                let webURL: URL = URL.new("https://twitter.com/\(screenName)")
+                if UIApplication.shared.canOpenURL(twitterURL) {
+                        UIApplication.shared.open(twitterURL, options: [:], completionHandler: nil)
                 } else {
                         open(url: webURL)
                 }

@@ -54,8 +54,10 @@ struct LocalText {
         static let SourceCode: String = NSLocalizedString("Source Code", comment: empty)
         static let Website: String = NSLocalizedString("Website", comment: empty)
         static let NetubeOnLoopool: String = NSLocalizedString("Netube on Loopool", comment: empty)
+        static let FollowUsOnTwitter: String = NSLocalizedString("Follow us on Twitter", comment: empty)
         static let TermsOfUse: String = NSLocalizedString("Terms of Use", comment: empty)
         static let PrivacyPolicy: String = NSLocalizedString("Privacy Policy", comment: empty)
         static let ReviewThisApp: String = NSLocalizedString("Review this App", comment: empty)
         static let ShareThisApp: String = NSLocalizedString("Share this App", comment: empty)
+        static let MadeByCantoneseInCantonia: String = NSLocalizedString("Made by Cantonese in Cantonia", comment: empty)
 }
