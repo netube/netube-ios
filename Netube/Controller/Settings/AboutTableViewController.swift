@@ -36,6 +36,7 @@ final class AboutTableViewController: UITableViewController {
                 
                 tableView.register(NormalTableViewCell.self, forCellReuseIdentifier: Idetifier.normalTableViewCell.rawValue)
                 tableView.register(RightDetailTableViewCell.self, forCellReuseIdentifier: Idetifier.rightDetailTableViewCell.rawValue)
+                tableView.register(GradientTableViewCell.self, forCellReuseIdentifier: Idetifier.gradientTableViewCell.rawValue)
                 
                 clearsSelectionOnViewWillAppear = true
         }
@@ -139,33 +140,10 @@ final class AboutTableViewController: UITableViewController {
                                 return UITableViewCell()
                         }
                 case 4:
-                        guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.normalTableViewCell.rawValue, for: indexPath) as? NormalTableViewCell else { return UITableViewCell() }
-                        
-                        // Uncomment to enable color
-                        /*
-                        let gradient: CAGradientLayer = CAGradientLayer()
-                        gradient.colors = [UIColor.primary.cgColor, UIColor.red.cgColor]
-                        gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
-                        gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
-                        gradient.frame = cell.bounds
-                        cell.layer.insertSublayer(gradient, at: 0)
+                        guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.gradientTableViewCell.rawValue, for: indexPath) as? GradientTableViewCell else { return UITableViewCell() }
                         cell.textLabel?.text = LocalText.MadeByCantoneseInCantonia
                         cell.textLabel?.textAlignment = .center
-                        cell.mask = cell.textLabel
-                        */
-                        
-                        let gradient: CAGradientLayer = CAGradientLayer()
-                        gradient.colors = [UIColor.lightText.cgColor, UIColor.darkText.cgColor]
-                        
-                        // Uncomment to enable [left to right]
-                        // gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
-                        // gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
-                        
-                        gradient.frame = cell.bounds
-                        cell.layer.insertSublayer(gradient, at: 0)
-                        cell.textLabel?.text = LocalText.MadeByCantoneseInCantonia
-                        cell.textLabel?.textAlignment = .center
-                        cell.mask = cell.textLabel
+                        cell.setGradient()
                         return cell
                 default:
                         return UITableViewCell()
@@ -184,7 +162,6 @@ final class AboutTableViewController: UITableViewController {
                                 let netubeWebsite: URL = URL.new("https://netube.org")
                                 open(url: netubeWebsite)
                         case 2:
-                                // openLoopool()
                                 openTwitter()
                         default:
                                 break

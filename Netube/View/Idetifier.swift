@@ -22,6 +22,8 @@ enum Idetifier: String {
         case rightDetailTableViewCell
         case subtitleTableViewCell
         
+        case gradientTableViewCell
+        
         case switchTableViewCell
         case textFieldTableViewCell
 }

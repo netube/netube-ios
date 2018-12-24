@@ -134,8 +134,8 @@ final class HomeTableViewController: UITableViewController {
                 switch indexPath.section {
                 case 2:
                         tableView.deselectRow(at: indexPath, animated: true)
-                        tableView.visibleCells.forEach { $0.textLabel?.textColor = UIColor.darkText }
-                        tableView.cellForRow(at: indexPath)?.textLabel?.textColor = UIColor.primary
+                        tableView.visibleCells.forEach { $0.textLabel?.textColor = .darkText }
+                        tableView.cellForRow(at: indexPath)?.textLabel?.textColor = .primary
                 default:
                         tableView.deselectRow(at: indexPath, animated: true)
                 }

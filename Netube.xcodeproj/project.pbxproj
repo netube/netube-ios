@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370ED4C621D1381800B34723 /* GradientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370ED4C521D1381800B34723 /* GradientTableViewCell.swift */; };
 		37549D8821CF5A3A00A0F3BB /* Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37549D8721CF5A3A00A0F3BB /* Hash.swift */; };
 		37549D8A21CF5AB400A0F3BB /* KeyExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37549D8921CF5AB400A0F3BB /* KeyExchange.swift */; };
 		37549D8C21CF661900A0F3BB /* HashTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37549D8B21CF661900A0F3BB /* HashTableViewController.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		370ED4C521D1381800B34723 /* GradientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientTableViewCell.swift; sourceTree = "<group>"; };
 		37549D8721CF5A3A00A0F3BB /* Hash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hash.swift; sourceTree = "<group>"; };
 		37549D8921CF5AB400A0F3BB /* KeyExchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyExchange.swift; sourceTree = "<group>"; };
 		37549D8B21CF661900A0F3BB /* HashTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTableViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				852156CF1F92156A0053BA4A /* Idetifier.swift */,
+				370ED4C521D1381800B34723 /* GradientTableViewCell.swift */,
 				8597319D1F8504AB00072CA8 /* NormalTableViewCell.swift */,
 				859731A41F850FC800072CA8 /* RightDetailTableViewCell.swift */,
 				859731A61F85185D00072CA8 /* SubtitleTableViewCell.swift */,
@@ -322,6 +325,7 @@
 				37549D8821CF5A3A00A0F3BB /* Hash.swift in Sources */,
 				37549D8C21CF661900A0F3BB /* HashTableViewController.swift in Sources */,
 				37549D8E21CF6E3900A0F3BB /* KeyExchangeTableViewController.swift in Sources */,
+				370ED4C621D1381800B34723 /* GradientTableViewCell.swift in Sources */,
 				85497C831F855CEF00699EF2 /* AddServerTableViewController.swift in Sources */,
 				859FFE6B1F8155860096B407 /* AppDelegate.swift in Sources */,
 				85D5A83E2156016B00B0DD2A /* ColorExtension.swift in Sources */,
