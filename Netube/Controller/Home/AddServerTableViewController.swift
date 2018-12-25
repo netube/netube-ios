@@ -52,7 +52,7 @@ final class AddServerTableViewController: UITableViewController, UITextFieldDele
                                 host: fields[0].text ?? "error",
                                 port: fields[1].text.convertToInteger,
                                 secret: fields[2].text ?? "error",
-                                name: fields[3].text ?? "error",
+                                remark: fields[3].text ?? "error",
                                 cipher: usingCipher,
                                 hash: usingHash,
                                 keyExchange: usingKeyExchange)

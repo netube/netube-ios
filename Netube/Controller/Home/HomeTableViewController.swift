@@ -21,6 +21,7 @@ import UIKit
 final class HomeTableViewController: UITableViewController {
         
         var servers: [Configuration] = [Configuration]()
+        private var selectedIndex: Int = 0
         
         override func viewWillAppear(_ animated: Bool) {
                 tabBarController?.tabBar.isHidden = false
@@ -109,12 +110,15 @@ final class HomeTableViewController: UITableViewController {
                         return cell
                 case 2:
                         guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.rightDetailTableViewCell.rawValue, for: indexPath) as? RightDetailTableViewCell else { return UITableViewCell() }
-                        if servers.count >= indexPath.row {
-                                cell.textLabel?.text = servers[indexPath.row].name
-                        } else {
-                                cell.textLabel?.text = "error"
-                        }
                         cell.accessoryType = .detailButton
+                        if servers.count >= indexPath.row {
+                                cell.textLabel?.text = servers[indexPath.row].remark
+                        }
+                        if selectedIndex == indexPath.row {
+                                cell.setPoint(color: .primary, size: 8)
+                        } else {
+                                cell.setPoint(color: .white, size: 8)
+                        }
                         return cell
                 default:
                         return UITableViewCell()
@@ -131,13 +135,16 @@ final class HomeTableViewController: UITableViewController {
         }
         
         override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-                switch indexPath.section {
-                case 2:
-                        tableView.deselectRow(at: indexPath, animated: true)
-                        tableView.visibleCells.forEach { $0.textLabel?.textColor = .darkText }
-                        tableView.cellForRow(at: indexPath)?.textLabel?.textColor = .primary
-                default:
-                        tableView.deselectRow(at: indexPath, animated: true)
+                tableView.deselectRow(at: indexPath, animated: true)
+                if indexPath.section == 2 {
+                        selectedIndex = indexPath.row
+                        tableView.visibleCells.forEach { cell in
+                                let ip: IndexPath = tableView.indexPath(for: cell) ?? indexPath
+                                if ip.section == 2 {
+                                        tableView.cellForRow(at: ip)?.setPoint(color: .white, size: 8)
+                                }
+                        }
+                        tableView.cellForRow(at: indexPath)?.setPoint(color: .primary, size: 8)
                 }
         }
         

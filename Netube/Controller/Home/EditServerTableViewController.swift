@@ -48,7 +48,7 @@ final class EditServerTableViewController: UITableViewController, UITextFieldDel
                         server?.host = fields[0].text ?? "error"
                         server?.port = fields[1].text.convertToInteger
                         server?.secret = fields[2].text ?? "error"
-                        server?.name = fields[3].text ?? "error"
+                        server?.remark = fields[3].text ?? "error"
                         let count: Int = navigationController?.viewControllers.count ?? 2
                         if let homeTVC = navigationController?.viewControllers[count - 2] as? HomeTableViewController {
                                 homeTVC.servers[serverNumber!] = server!
@@ -143,7 +143,7 @@ final class EditServerTableViewController: UITableViewController, UITextFieldDel
                                 fields[2] = cell.textField
                         case 3:
                                 cell.label.text = LocalText.Remark
-                                cell.textField.text = server?.name
+                                cell.textField.text = server?.remark
                                 cell.textField.placeholder = LocalText.Required
                                 cell.textField.returnKeyType = .default
                                 cell.textField.autocapitalizationType = .words

@@ -20,7 +20,7 @@ struct Configuration {
         var host: String
         var port: Int
         var secret: String
-        var name: String
+        var remark: String
         var cipher: Cipher
         var hash: Hash
         var keyExchange: KeyExchange

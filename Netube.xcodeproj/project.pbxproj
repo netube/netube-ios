@@ -12,6 +12,7 @@
 		37549D8A21CF5AB400A0F3BB /* KeyExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37549D8921CF5AB400A0F3BB /* KeyExchange.swift */; };
 		37549D8C21CF661900A0F3BB /* HashTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37549D8B21CF661900A0F3BB /* HashTableViewController.swift */; };
 		37549D8E21CF6E3900A0F3BB /* KeyExchangeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37549D8D21CF6E3900A0F3BB /* KeyExchangeTableViewController.swift */; };
+		378B8F4421D24EFB00525304 /* TableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B8F4321D24EFB00525304 /* TableViewCellExtension.swift */; };
 		852156D01F92156A0053BA4A /* Idetifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852156CF1F92156A0053BA4A /* Idetifier.swift */; };
 		85276AA01FE6BFEC001EF4B7 /* LocalText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85276A9F1FE6BFEC001EF4B7 /* LocalText.swift */; };
 		85310CA21F9BA79B00C5DCD7 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85310CA11F9BA79B00C5DCD7 /* StringExtension.swift */; };
@@ -49,6 +50,7 @@
 		37549D8921CF5AB400A0F3BB /* KeyExchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyExchange.swift; sourceTree = "<group>"; };
 		37549D8B21CF661900A0F3BB /* HashTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTableViewController.swift; sourceTree = "<group>"; };
 		37549D8D21CF6E3900A0F3BB /* KeyExchangeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyExchangeTableViewController.swift; sourceTree = "<group>"; };
+		378B8F4321D24EFB00525304 /* TableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellExtension.swift; sourceTree = "<group>"; };
 		852156CF1F92156A0053BA4A /* Idetifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Idetifier.swift; sourceTree = "<group>"; };
 		85276A9F1FE6BFEC001EF4B7 /* LocalText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalText.swift; sourceTree = "<group>"; };
 		85310CA11F9BA79B00C5DCD7 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				85310CA11F9BA79B00C5DCD7 /* StringExtension.swift */,
+				378B8F4321D24EFB00525304 /* TableViewCellExtension.swift */,
 				85D5A83D2156016B00B0DD2A /* ColorExtension.swift */,
 				85310CA31F9BAB5800C5DCD7 /* TextFieldExtension.swift */,
 				855786B720D4D30100A2C229 /* URLExtension.swift */,
@@ -312,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				378B8F4421D24EFB00525304 /* TableViewCellExtension.swift in Sources */,
 				85989EBE1F90818000817C90 /* TextFieldTableViewCell.swift in Sources */,
 				37549D8A21CF5AB400A0F3BB /* KeyExchange.swift in Sources */,
 				859FFE811F815FCA0096B407 /* HomeTableViewController.swift in Sources */,
