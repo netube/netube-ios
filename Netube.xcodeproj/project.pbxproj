@@ -13,11 +13,12 @@
 		37549D8C21CF661900A0F3BB /* HashTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37549D8B21CF661900A0F3BB /* HashTableViewController.swift */; };
 		37549D8E21CF6E3900A0F3BB /* KeyExchangeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37549D8D21CF6E3900A0F3BB /* KeyExchangeTableViewController.swift */; };
 		378B8F4421D24EFB00525304 /* TableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B8F4321D24EFB00525304 /* TableViewCellExtension.swift */; };
+		378B8F4721D355F600525304 /* AddServiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B8F4621D355F600525304 /* AddServiceTableViewController.swift */; };
 		852156D01F92156A0053BA4A /* Idetifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852156CF1F92156A0053BA4A /* Idetifier.swift */; };
 		85276AA01FE6BFEC001EF4B7 /* LocalText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85276A9F1FE6BFEC001EF4B7 /* LocalText.swift */; };
 		85310CA21F9BA79B00C5DCD7 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85310CA11F9BA79B00C5DCD7 /* StringExtension.swift */; };
 		85310CA41F9BAB5800C5DCD7 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85310CA31F9BAB5800C5DCD7 /* TextFieldExtension.swift */; };
-		85497C831F855CEF00699EF2 /* AddServerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85497C821F855CEF00699EF2 /* AddServerTableViewController.swift */; };
+		85497C831F855CEF00699EF2 /* AddNetubeServiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85497C821F855CEF00699EF2 /* AddNetubeServiceTableViewController.swift */; };
 		85497C881F85FE3100699EF2 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85497C871F85FE3100699EF2 /* AboutTableViewController.swift */; };
 		855786B820D4D30100A2C229 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855786B720D4D30100A2C229 /* URLExtension.swift */; };
 		855786BA20D4FD3100A2C229 /* PrivacyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855786B920D4FD3100A2C229 /* PrivacyTableViewController.swift */; };
@@ -51,11 +52,12 @@
 		37549D8B21CF661900A0F3BB /* HashTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTableViewController.swift; sourceTree = "<group>"; };
 		37549D8D21CF6E3900A0F3BB /* KeyExchangeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyExchangeTableViewController.swift; sourceTree = "<group>"; };
 		378B8F4321D24EFB00525304 /* TableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellExtension.swift; sourceTree = "<group>"; };
+		378B8F4621D355F600525304 /* AddServiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddServiceTableViewController.swift; sourceTree = "<group>"; };
 		852156CF1F92156A0053BA4A /* Idetifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Idetifier.swift; sourceTree = "<group>"; };
 		85276A9F1FE6BFEC001EF4B7 /* LocalText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalText.swift; sourceTree = "<group>"; };
 		85310CA11F9BA79B00C5DCD7 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		85310CA31F9BAB5800C5DCD7 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
-		85497C821F855CEF00699EF2 /* AddServerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddServerTableViewController.swift; sourceTree = "<group>"; };
+		85497C821F855CEF00699EF2 /* AddNetubeServiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNetubeServiceTableViewController.swift; sourceTree = "<group>"; };
 		85497C871F85FE3100699EF2 /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		855786B720D4D30100A2C229 /* URLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
 		855786B920D4FD3100A2C229 /* PrivacyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyTableViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,15 @@
 			path = Encryption;
 			sourceTree = "<group>";
 		};
+		378B8F4521D355A800525304 /* AddService */ = {
+			isa = PBXGroup;
+			children = (
+				378B8F4621D355F600525304 /* AddServiceTableViewController.swift */,
+				85497C821F855CEF00699EF2 /* AddNetubeServiceTableViewController.swift */,
+			);
+			path = AddService;
+			sourceTree = "<group>";
+		};
 		85310CA01F9BA76E00C5DCD7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,7 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				859FFE801F815FCA0096B407 /* HomeTableViewController.swift */,
-				85497C821F855CEF00699EF2 /* AddServerTableViewController.swift */,
+				378B8F4521D355A800525304 /* AddService */,
 				857CEDE01F949C7400EE7A27 /* EditServerTableViewController.swift */,
 				85989EC11F9114D900817C90 /* CipherTableViewController.swift */,
 				37549D8B21CF661900A0F3BB /* HashTableViewController.swift */,
@@ -323,6 +334,7 @@
 				85497C881F85FE3100699EF2 /* AboutTableViewController.swift in Sources */,
 				859731A51F850FC800072CA8 /* RightDetailTableViewCell.swift in Sources */,
 				852156D01F92156A0053BA4A /* Idetifier.swift in Sources */,
+				378B8F4721D355F600525304 /* AddServiceTableViewController.swift in Sources */,
 				8597319E1F8504AB00072CA8 /* NormalTableViewCell.swift in Sources */,
 				855786B820D4D30100A2C229 /* URLExtension.swift in Sources */,
 				855786BA20D4FD3100A2C229 /* PrivacyTableViewController.swift in Sources */,
@@ -330,7 +342,7 @@
 				37549D8C21CF661900A0F3BB /* HashTableViewController.swift in Sources */,
 				37549D8E21CF6E3900A0F3BB /* KeyExchangeTableViewController.swift in Sources */,
 				370ED4C621D1381800B34723 /* GradientTableViewCell.swift in Sources */,
-				85497C831F855CEF00699EF2 /* AddServerTableViewController.swift in Sources */,
+				85497C831F855CEF00699EF2 /* AddNetubeServiceTableViewController.swift in Sources */,
 				859FFE6B1F8155860096B407 /* AppDelegate.swift in Sources */,
 				85D5A83E2156016B00B0DD2A /* ColorExtension.swift in Sources */,
 				85B4E5E51F9B603400781099 /* Configuration.swift in Sources */,

@@ -18,7 +18,7 @@
 
 import UIKit
 
-final class AddServerTableViewController: UITableViewController, UITextFieldDelegate {
+final class AddNetubeServiceTableViewController: UITableViewController, UITextFieldDelegate {
         
         private var fields: [UITextField] = Array(repeating: UITextField(), count: 4)
         
@@ -28,13 +28,15 @@ final class AddServerTableViewController: UITableViewController, UITextFieldDele
         
         private var newServer: Configuration?
         
+        /*
         override func viewWillAppear(_ animated: Bool) {
                 tabBarController?.tabBar.isHidden = true
         }
+        */
         
         override func viewDidLoad() {
                 super.viewDidLoad()
-                title = LocalText.AddServer
+                title = LocalText.Netube
                 navigationController?.navigationBar.tintColor = UIColor.primary
                 
                 tableView.register(NormalTableViewCell.self, forCellReuseIdentifier: Idetifier.normalTableViewCell.rawValue)

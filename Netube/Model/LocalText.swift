@@ -31,6 +31,12 @@ struct LocalText {
         static let Connecting: String = NSLocalizedString("Connecting", comment: empty)
         static let Connected: String = NSLocalizedString("Connected", comment: empty)
         
+        static let AddService: String = NSLocalizedString("Add Service", comment: empty)
+        static let Netube: String = NSLocalizedString("Netube", comment: empty)
+        static let RouteFilter: String = NSLocalizedString("Route Filter", comment: empty)
+        static let Shadowsocks: String = NSLocalizedString("Shadowsocks", comment: empty)
+        static let GFWPress: String = NSLocalizedString("GFW.Press", comment: empty)
+        
         static let AddServer: String = NSLocalizedString("Add Server", comment: empty)
         static let EditServer: String = NSLocalizedString("Edit Server", comment: empty)
         static let ScanQRCode: String = NSLocalizedString("Scan QR Code", comment: empty)

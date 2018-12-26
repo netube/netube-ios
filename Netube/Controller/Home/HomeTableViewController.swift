@@ -42,7 +42,8 @@ final class HomeTableViewController: UITableViewController {
         }
         
         @objc private func addServer() {
-                navigationController?.pushViewController(AddServerTableViewController(), animated: true)
+                navigationController?.pushViewController(AddServiceTableViewController(), animated: true)
+                // navigationController?.pushViewController(AddServerTableViewController(), animated: true)
         }
         
         override func numberOfSections(in tableView: UITableView) -> Int {

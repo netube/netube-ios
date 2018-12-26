@@ -26,9 +26,11 @@ final class CipherTableViewController: UITableViewController {
                 }
         }
         
+        /*
         override func viewWillAppear(_ animated: Bool) {
                 tabBarController?.tabBar.isHidden = true
         }
+        */
         
         override func viewDidLoad() {
                 super.viewDidLoad()
@@ -97,7 +99,7 @@ final class CipherTableViewController: UITableViewController {
                 let count: Int = navigationController?.viewControllers.count ?? 2
                 let backVC: UIViewController? = navigationController?.viewControllers[count - 2]
                 
-                if let addServerTVC = backVC as? AddServerTableViewController {
+                if let addServerTVC = backVC as? AddNetubeServiceTableViewController {
                         addServerTVC.usingCipher = cipher
                         addServerTVC.tableView.reloadData()
                         navigationController?.popToViewController(addServerTVC, animated: true)
