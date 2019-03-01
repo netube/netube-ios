@@ -38,16 +38,14 @@ final class AddServiceTableViewController: UITableViewController {
         }
         
         override func numberOfSections(in tableView: UITableView) -> Int {
-                return 3
+                return 2
         }
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
                 switch section {
                 case 0:
                         return 1
                 case 1:
-                        return 1
-                case 2:
-                        return 2
+                        return 3
                 default:
                         return 1
                 }
@@ -59,7 +57,7 @@ final class AddServiceTableViewController: UITableViewController {
         }
         override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
                 switch section {
-                case 2:
+                case 1:
                         return space
                 default:
                         return nil
@@ -71,21 +69,21 @@ final class AddServiceTableViewController: UITableViewController {
                 case 0:
                         guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.normalTableViewCell.rawValue, for: indexPath) as? NormalTableViewCell else { return UITableViewCell() }
                         cell.accessoryType = .disclosureIndicator
-                        cell.textLabel?.text = LocalText.Netube
-                        return cell
-                case 1:
-                        guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.normalTableViewCell.rawValue, for: indexPath) as? NormalTableViewCell else { return UITableViewCell() }
-                        cell.accessoryType = .disclosureIndicator
                         cell.textLabel?.text = LocalText.RouteFilter
                         return cell
-                case 2:
+                case 1:
                         switch indexPath.row {
                         case 0:
                                 guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.normalTableViewCell.rawValue, for: indexPath) as? NormalTableViewCell else { return UITableViewCell() }
                                 cell.accessoryType = .disclosureIndicator
-                                cell.textLabel?.text = LocalText.Shadowsocks
+                                cell.textLabel?.text = LocalText.Netube
                                 return cell
                         case 1:
+                                guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.normalTableViewCell.rawValue, for: indexPath) as? NormalTableViewCell else { return UITableViewCell() }
+                                cell.accessoryType = .disclosureIndicator
+                                cell.textLabel?.text = LocalText.Shadowsocks
+                                return cell
+                        case 2:
                                 guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.normalTableViewCell.rawValue, for: indexPath) as? NormalTableViewCell else { return UITableViewCell() }
                                 cell.accessoryType = .disclosureIndicator
                                 cell.textLabel?.text = LocalText.GFWPress

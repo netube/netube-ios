@@ -60,7 +60,7 @@ final class PrivacyTableViewController: UITableViewController {
         override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
                 switch section {
                 case 0:
-                        return "We do not collect personal data"
+                        return "This App does not collect any user data"
                 case 1:
                         return "Netube is fully open source"
                 default:
