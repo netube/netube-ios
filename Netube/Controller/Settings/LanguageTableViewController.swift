@@ -22,8 +22,8 @@ final class LanguageTableViewController: UITableViewController {
         
         enum Language: String {
                 case english = "English"
-                case chinese = "正體中文"
-                case simplifiedChinese = "简体中文"
+                case chinese = "傳統中文"
+                case simplifiedChinese = "简化字中文"
         }
         
         var selectedLanguage: Language = .english
