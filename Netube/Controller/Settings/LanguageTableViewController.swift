@@ -22,8 +22,9 @@ final class LanguageTableViewController: UITableViewController {
         
         enum Language: String {
                 case english = "English"
-                case chinese = "傳統中文"
-                case simplifiedChinese = "简化字中文"
+                case cantoneseChinese = "粵語 - 傳統漢字"
+                case mandarinChinese = "國語 - 傳統漢字"
+                case mandarinSimplifiedChinese = "普通话 - 简化字"
         }
         
         var selectedLanguage: Language = .english
@@ -50,7 +51,7 @@ final class LanguageTableViewController: UITableViewController {
                 return 1
         }
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-                return 3
+                return 4
         }
         
         private let space: String = " "
@@ -68,9 +69,11 @@ final class LanguageTableViewController: UITableViewController {
                 case 0:
                         cell.textLabel?.text = Language.english.rawValue
                 case 1:
-                        cell.textLabel?.text = Language.chinese.rawValue
+                        cell.textLabel?.text = Language.cantoneseChinese.rawValue
                 case 2:
-                        cell.textLabel?.text = Language.simplifiedChinese.rawValue
+                        cell.textLabel?.text = Language.mandarinChinese.rawValue
+                case 3:
+                        cell.textLabel?.text = Language.mandarinSimplifiedChinese.rawValue
                 default:
                         break
                 }
@@ -88,9 +91,11 @@ final class LanguageTableViewController: UITableViewController {
                 case 0:
                         selectedLanguage = .english
                 case 1:
-                        selectedLanguage = .chinese
+                        selectedLanguage = .cantoneseChinese
                 case 2:
-                        selectedLanguage = .simplifiedChinese
+                        selectedLanguage = .mandarinChinese
+                case 3:
+                        selectedLanguage = .mandarinSimplifiedChinese
                 default:
                         break
                 }
