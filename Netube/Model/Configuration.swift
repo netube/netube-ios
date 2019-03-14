@@ -17,10 +17,10 @@
 //
 
 struct Configuration {
+        var name: String
         var host: String
         var port: Int
         var secret: String
-        var remark: String
         var cipher: Cipher
         var hash: Hash
         var keyExchange: KeyExchange

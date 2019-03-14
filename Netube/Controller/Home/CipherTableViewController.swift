@@ -20,7 +20,7 @@ import UIKit
 
 final class CipherTableViewController: UITableViewController {
         
-        var selectedCipher: Cipher = .XCHACHA20_POLY1305 {
+        var selectedCipher: Cipher = .xchacha20poly1305 {
                 didSet {
                         performSelection(cipher: selectedCipher)
                 }
@@ -61,13 +61,13 @@ final class CipherTableViewController: UITableViewController {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.normalTableViewCell.rawValue, for: indexPath) as? NormalTableViewCell else { return UITableViewCell() }
                 switch indexPath.row {
                 case 0:
-                        cell.textLabel?.text = Cipher.XCHACHA20_POLY1305.rawValue
+                        cell.textLabel?.text = Cipher.xchacha20poly1305.rawValue
                 case 1:
-                        cell.textLabel?.text = Cipher.CHACHA20_POLY1305.rawValue
+                        cell.textLabel?.text = Cipher.chacha20poly1305.rawValue
                 case 2:
-                        cell.textLabel?.text = Cipher.AES_256_GCM.rawValue
+                        cell.textLabel?.text = Cipher.aes256gcm.rawValue
                 case 3:
-                        cell.textLabel?.text = Cipher.AES_128_GCM.rawValue
+                        cell.textLabel?.text = Cipher.aes128gcm.rawValue
                 default:
                         break
                 }
@@ -83,13 +83,13 @@ final class CipherTableViewController: UITableViewController {
                 tableView.deselectRow(at: indexPath, animated: true)
                 switch indexPath.row {
                 case 0:
-                        selectedCipher = .XCHACHA20_POLY1305
+                        selectedCipher = .xchacha20poly1305
                 case 1:
-                        selectedCipher = .CHACHA20_POLY1305
+                        selectedCipher = .chacha20poly1305
                 case 2:
-                        selectedCipher = .AES_256_GCM
+                        selectedCipher = .aes256gcm
                 case 3:
-                        selectedCipher = .AES_128_GCM
+                        selectedCipher = .aes128gcm
                 default:
                         break
                 }

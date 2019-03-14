@@ -22,9 +22,9 @@ final class AddNetubeServiceTableViewController: UITableViewController, UITextFi
         
         private var fields: [UITextField] = Array(repeating: UITextField(), count: 4)
         
-        var usingCipher: Cipher = .XCHACHA20_POLY1305
-        var usingHash: Hash = .SHA2_256
-        var usingKeyExchange: KeyExchange = .X25519
+        var usingCipher: Cipher = .xchacha20poly1305
+        var usingHash: Hash = .sha2_256
+        var usingKeyExchange: KeyExchange = .x25519
         
         private var newServer: Configuration?
         
@@ -45,21 +45,21 @@ final class AddNetubeServiceTableViewController: UITableViewController, UITextFi
                 
                 clearsSelectionOnViewWillAppear = true
                 
-                navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(confirm))
+                navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(performAdding))
         }
         
-        @objc private func confirm() {
+        @objc private func performAdding() {
                 if (fields.filter { $0.hasCharacters }).count == fields.count {
                         newServer = Configuration(
+                                name: fields[3].text ?? "error",
                                 host: fields[0].text ?? "error",
                                 port: fields[1].text.convertToInteger,
                                 secret: fields[2].text ?? "error",
-                                remark: fields[3].text ?? "error",
                                 cipher: usingCipher,
                                 hash: usingHash,
                                 keyExchange: usingKeyExchange)
-                        let count: Int = navigationController?.viewControllers.count ?? 2
-                        if let homeTVC = navigationController?.viewControllers[count - 2] as? HomeTableViewController {
+                        let count: Int = navigationController?.viewControllers.count ?? 3
+                        if let homeTVC = navigationController?.viewControllers[count - 3] as? HomeTableViewController {
                                 homeTVC.servers.append(newServer!)
                                 homeTVC.tableView.reloadData()
                                 navigationController?.popToViewController(homeTVC, animated: true)
@@ -136,27 +136,27 @@ final class AddNetubeServiceTableViewController: UITableViewController, UITextFi
                         cell.textField.delegate = self
                         switch indexPath.row {
                         case 0:
-                                cell.label.text = LocalText.Host
+                                cell.label.text = LocalText.Name
                                 cell.textField.placeholder = LocalText.Required
-                                cell.textField.keyboardType = .URL
-                                fields[0] = cell.textField
-                        case 1:
-                                cell.label.text = LocalText.Port
-                                cell.textField.placeholder = LocalText.Required
-                                cell.textField.keyboardType = .numberPad
-                                fields[1] = cell.textField
-                        case 2:
-                                cell.label.text = LocalText.Secret
-                                cell.textField.placeholder = LocalText.Required
-                                cell.textField.isSecureTextEntry = true
-                                fields[2] = cell.textField
-                        case 3:
-                                cell.label.text = LocalText.Remark
-                                cell.textField.placeholder = LocalText.Required
-                                cell.textField.returnKeyType = .default
                                 cell.textField.autocapitalizationType = .words
                                 cell.textField.autocorrectionType = .yes
                                 cell.textField.spellCheckingType = .yes
+                                fields[0] = cell.textField
+                        case 1:
+                                cell.label.text = LocalText.Host
+                                cell.textField.placeholder = LocalText.Required
+                                cell.textField.keyboardType = .URL
+                                fields[1] = cell.textField
+                        case 2:
+                                cell.label.text = LocalText.Port
+                                cell.textField.placeholder = LocalText.Required
+                                cell.textField.keyboardType = .numberPad
+                                fields[2] = cell.textField
+                        case 3:
+                                cell.label.text = LocalText.Secret
+                                cell.textField.placeholder = LocalText.Required
+                                cell.textField.isSecureTextEntry = true
+                                cell.textField.returnKeyType = .default
                                 fields[3] = cell.textField
                         default:
                                 break

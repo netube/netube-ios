@@ -21,7 +21,7 @@ import UIKit
 final class HashTableViewController: UITableViewController {
         
         
-        var selectedHash: Hash = .SHA2_256 {
+        var selectedHash: Hash = .sha2_256 {
                 didSet {
                         performSelection(hash: selectedHash)
                 }
@@ -60,11 +60,11 @@ final class HashTableViewController: UITableViewController {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.normalTableViewCell.rawValue, for: indexPath) as? NormalTableViewCell else { return UITableViewCell() }
                 switch indexPath.row {
                 case 0:
-                        cell.textLabel?.text = Hash.SHA2_256.rawValue
+                        cell.textLabel?.text = Hash.sha2_256.rawValue
                 case 1:
-                        cell.textLabel?.text = Hash.SHA2_384.rawValue
+                        cell.textLabel?.text = Hash.sha2_384.rawValue
                 case 2:
-                        cell.textLabel?.text = Hash.SHA2_512.rawValue
+                        cell.textLabel?.text = Hash.sha2_512.rawValue
                 default:
                         break
                 }
@@ -80,11 +80,11 @@ final class HashTableViewController: UITableViewController {
                 tableView.deselectRow(at: indexPath, animated: true)
                 switch indexPath.row {
                 case 0:
-                        selectedHash = .SHA2_256
+                        selectedHash = .sha2_256
                 case 1:
-                        selectedHash = .SHA2_384
+                        selectedHash = .sha2_384
                 case 2:
-                        selectedHash = .SHA2_512
+                        selectedHash = .sha2_512
                 default:
                         break
                 }

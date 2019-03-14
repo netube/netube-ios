@@ -18,7 +18,7 @@
 
 
 enum Hash: String {
-        case SHA2_256
-        case SHA2_384
-        case SHA2_512
+        case sha2_256 = "SHA2-256"
+        case sha2_384 = "SHA2-384"
+        case sha2_512 = "SHA2-512"
 }

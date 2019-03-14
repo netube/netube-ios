@@ -21,7 +21,7 @@ import UIKit
 final class KeyExchangeTableViewController: UITableViewController {
         
         
-        var selectedKeyExchange: KeyExchange = .X25519 {
+        var selectedKeyExchange: KeyExchange = .x25519 {
                 didSet {
                         performSelection(keyExchange: selectedKeyExchange)
                 }
@@ -60,7 +60,7 @@ final class KeyExchangeTableViewController: UITableViewController {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.normalTableViewCell.rawValue, for: indexPath) as? NormalTableViewCell else { return UITableViewCell() }
                 switch indexPath.row {
                 case 0:
-                        cell.textLabel?.text = KeyExchange.X25519.rawValue
+                        cell.textLabel?.text = KeyExchange.x25519.rawValue
                 default:
                         break
                 }
@@ -76,7 +76,7 @@ final class KeyExchangeTableViewController: UITableViewController {
                 tableView.deselectRow(at: indexPath, animated: true)
                 switch indexPath.row {
                 case 0:
-                        selectedKeyExchange = .X25519
+                        selectedKeyExchange = .x25519
                 default:
                         break
                 }

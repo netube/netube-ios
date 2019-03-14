@@ -17,5 +17,5 @@
 //
 
 enum KeyExchange: String {
-        case X25519
+        case x25519 = "X25519"
 }

@@ -105,7 +105,7 @@ final class HomeTableViewController: UITableViewController {
                         return cell
                 case 1:
                         guard let cell  = tableView.dequeueReusableCell(withIdentifier: Idetifier.switchTableViewCell.rawValue, for: indexPath) as? SwitchTableViewCell else { return UITableViewCell() }
-                        cell.textLabel?.text = LocalText.Connect
+                        cell.textLabel?.text = LocalText.NotConnected
                         cell.switchView.addTarget(self, action: #selector(handle(switchView:)), for: UIControl.Event.touchUpInside)
                         cell.switchView.isEnabled = servers.count != 0
                         return cell
@@ -113,7 +113,7 @@ final class HomeTableViewController: UITableViewController {
                         guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.rightDetailTableViewCell.rawValue, for: indexPath) as? RightDetailTableViewCell else { return UITableViewCell() }
                         cell.accessoryType = .detailButton
                         if servers.count >= indexPath.row {
-                                cell.textLabel?.text = servers[indexPath.row].remark
+                                cell.textLabel?.text = servers[indexPath.row].name
                         }
                         if selectedIndex == indexPath.row {
                                 cell.setPoint(color: .primary, size: 8)
@@ -131,7 +131,7 @@ final class HomeTableViewController: UITableViewController {
                 if switchView.isOn {
                         cell?.textLabel?.text = LocalText.Connected
                 } else {
-                        cell?.textLabel?.text = LocalText.Connect
+                        cell?.textLabel?.text = LocalText.NotConnected
                 }
         }
         

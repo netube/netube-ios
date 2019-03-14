@@ -27,7 +27,7 @@ struct LocalText {
         static let Data: String = NSLocalizedString("Data", comment: empty)
         static let Settings: String = NSLocalizedString("Settings", comment: empty)
         
-        static let Connect: String = NSLocalizedString("Connect", comment: empty)
+        static let NotConnected: String = NSLocalizedString("Not Connected", comment: empty)
         static let Connecting: String = NSLocalizedString("Connecting", comment: empty)
         static let Connected: String = NSLocalizedString("Connected", comment: empty)
         
@@ -42,6 +42,7 @@ struct LocalText {
         static let ScanQRCode: String = NSLocalizedString("Scan QR Code", comment: empty)
         static let GenerateQRCode: String = NSLocalizedString("Generate QR Code", comment: empty)
         static let Required: String = NSLocalizedString("Required", comment: empty)
+        static let Name: String = NSLocalizedString("Name", comment: empty)
         static let Host: String = NSLocalizedString("Host", comment: empty)
         static let Port: String = NSLocalizedString("Port", comment: empty)
         static let Secret: String = NSLocalizedString("Secret", comment: empty)

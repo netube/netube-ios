@@ -48,7 +48,7 @@ final class EditServerTableViewController: UITableViewController, UITextFieldDel
                         server?.host = fields[0].text ?? "error"
                         server?.port = fields[1].text.convertToInteger
                         server?.secret = fields[2].text ?? "error"
-                        server?.remark = fields[3].text ?? "error"
+                        server?.name = fields[3].text ?? "error"
                         let count: Int = navigationController?.viewControllers.count ?? 2
                         if let homeTVC = navigationController?.viewControllers[count - 2] as? HomeTableViewController {
                                 homeTVC.servers[serverNumber!] = server!
@@ -143,7 +143,7 @@ final class EditServerTableViewController: UITableViewController, UITextFieldDel
                                 fields[2] = cell.textField
                         case 3:
                                 cell.label.text = LocalText.Remark
-                                cell.textField.text = server?.remark
+                                cell.textField.text = server?.name
                                 cell.textField.placeholder = LocalText.Required
                                 cell.textField.returnKeyType = .default
                                 cell.textField.autocapitalizationType = .words
@@ -190,15 +190,15 @@ final class EditServerTableViewController: UITableViewController, UITextFieldDel
                 switch row {
                 case 0:
                         let cipherTVC = CipherTableViewController()
-                        cipherTVC.selectedCipher = server?.cipher ?? .XCHACHA20_POLY1305
+                        cipherTVC.selectedCipher = server?.cipher ?? .xchacha20poly1305
                         navigationController?.pushViewController(cipherTVC, animated: true)
                 case 1:
                         let hashTVC = HashTableViewController()
-                        hashTVC.selectedHash = server?.hash ?? .SHA2_256
+                        hashTVC.selectedHash = server?.hash ?? .sha2_256
                         navigationController?.pushViewController(hashTVC, animated: true)
                 case 2:
                         let keyExchangeTVC = KeyExchangeTableViewController()
-                        keyExchangeTVC.selectedKeyExchange = server?.keyExchange ?? .X25519
+                        keyExchangeTVC.selectedKeyExchange = server?.keyExchange ?? .x25519
                         navigationController?.pushViewController(keyExchangeTVC, animated: true)
                 default:
                         break
