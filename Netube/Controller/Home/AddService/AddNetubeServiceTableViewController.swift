@@ -28,11 +28,9 @@ final class AddNetubeServiceTableViewController: UITableViewController, UITextFi
         
         private var newServer: Configuration?
         
-        /*
         override func viewWillAppear(_ animated: Bool) {
                 tabBarController?.tabBar.isHidden = true
         }
-        */
         
         override func viewDidLoad() {
                 super.viewDidLoad()
@@ -164,6 +162,9 @@ final class AddNetubeServiceTableViewController: UITableViewController, UITextFi
                         return cell
                 case 2:
                         guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.rightDetailTableViewCell.rawValue, for: indexPath) as? RightDetailTableViewCell else { return UITableViewCell() }
+                        
+                        cell.detailTextLabel?.font = UIFont(name: "LiberationMono", size: 15)
+                        
                         switch indexPath.row {
                         case 0:
                                 cell.textLabel?.text = LocalText.Cipher

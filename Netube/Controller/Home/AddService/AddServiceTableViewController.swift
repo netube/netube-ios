@@ -20,14 +20,12 @@ import UIKit
 
 final class AddServiceTableViewController: UITableViewController {
         
-        /*
         override func viewWillAppear(_ animated: Bool) {
                 tabBarController?.tabBar.isHidden = true
         }
         override func viewWillDisappear(_ animated: Bool) {
                 tabBarController?.tabBar.isHidden = false
         }
-        */
         
         override func viewDidLoad() {
                 super.viewDidLoad()

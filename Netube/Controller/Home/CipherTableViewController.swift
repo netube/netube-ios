@@ -46,7 +46,7 @@ final class CipherTableViewController: UITableViewController {
         }
         
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-                return 4
+                return 5
         }
         
         private let space: String = " "
@@ -59,6 +59,9 @@ final class CipherTableViewController: UITableViewController {
         
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.normalTableViewCell.rawValue, for: indexPath) as? NormalTableViewCell else { return UITableViewCell() }
+                
+                cell.textLabel?.font = UIFont(name: "LiberationMono", size: 16)
+                
                 switch indexPath.row {
                 case 0:
                         cell.textLabel?.text = Cipher.xchacha20poly1305.rawValue
@@ -67,6 +70,8 @@ final class CipherTableViewController: UITableViewController {
                 case 2:
                         cell.textLabel?.text = Cipher.aes256gcm.rawValue
                 case 3:
+                        cell.textLabel?.text = Cipher.aes192gcm.rawValue
+                case 4:
                         cell.textLabel?.text = Cipher.aes128gcm.rawValue
                 default:
                         break
@@ -89,6 +94,8 @@ final class CipherTableViewController: UITableViewController {
                 case 2:
                         selectedCipher = .aes256gcm
                 case 3:
+                        selectedCipher = .aes192gcm
+                case 4:
                         selectedCipher = .aes128gcm
                 default:
                         break

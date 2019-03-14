@@ -20,5 +20,6 @@ enum Cipher: String {
         case xchacha20poly1305 = "AEAD_XCHACHA20_POLY1305"
         case chacha20poly1305 = "AEAD_CHACHA20_POLY1305"
         case aes256gcm = "AEAD_AES_256_GCM"
+        case aes192gcm = "AEAD_AES_192_GCM"
         case aes128gcm = "AEAD_AES_128_GCM"
 }

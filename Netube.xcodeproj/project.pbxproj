@@ -14,6 +14,7 @@
 		37549D8E21CF6E3900A0F3BB /* KeyExchangeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37549D8D21CF6E3900A0F3BB /* KeyExchangeTableViewController.swift */; };
 		378B8F4421D24EFB00525304 /* TableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B8F4321D24EFB00525304 /* TableViewCellExtension.swift */; };
 		378B8F4721D355F600525304 /* AddServiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B8F4621D355F600525304 /* AddServiceTableViewController.swift */; };
+		37C66362223AAA9600F2D7CB /* LiberationMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 37C66361223AAA9600F2D7CB /* LiberationMono-Regular.ttf */; };
 		852156D01F92156A0053BA4A /* Idetifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852156CF1F92156A0053BA4A /* Idetifier.swift */; };
 		85276AA01FE6BFEC001EF4B7 /* LocalText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85276A9F1FE6BFEC001EF4B7 /* LocalText.swift */; };
 		85310CA21F9BA79B00C5DCD7 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85310CA11F9BA79B00C5DCD7 /* StringExtension.swift */; };
@@ -53,6 +54,7 @@
 		37549D8D21CF6E3900A0F3BB /* KeyExchangeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyExchangeTableViewController.swift; sourceTree = "<group>"; };
 		378B8F4321D24EFB00525304 /* TableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellExtension.swift; sourceTree = "<group>"; };
 		378B8F4621D355F600525304 /* AddServiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddServiceTableViewController.swift; sourceTree = "<group>"; };
+		37C66361223AAA9600F2D7CB /* LiberationMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "LiberationMono-Regular.ttf"; path = "Netube/Supports/LiberationMono-Regular.ttf"; sourceTree = SOURCE_ROOT; };
 		852156CF1F92156A0053BA4A /* Idetifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Idetifier.swift; sourceTree = "<group>"; };
 		85276A9F1FE6BFEC001EF4B7 /* LocalText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalText.swift; sourceTree = "<group>"; };
 		85310CA11F9BA79B00C5DCD7 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 		859FFE831F8167980096B407 /* Supports */ = {
 			isa = PBXGroup;
 			children = (
+				37C66361223AAA9600F2D7CB /* LiberationMono-Regular.ttf */,
 				85EACB551FE7C7090004F911 /* Localizable.strings */,
 				859FFE751F8155860096B407 /* LaunchScreen.storyboard */,
 				859FFE731F8155860096B407 /* Assets.xcassets */,
@@ -316,6 +319,7 @@
 				855786BF20D5076D00A2C229 /* InfoPlist.strings in Resources */,
 				85EACB531FE7C7090004F911 /* Localizable.strings in Resources */,
 				859FFE741F8155860096B407 /* Assets.xcassets in Resources */,
+				37C66362223AAA9600F2D7CB /* LiberationMono-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
