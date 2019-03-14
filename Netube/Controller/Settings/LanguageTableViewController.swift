@@ -22,9 +22,10 @@ final class LanguageTableViewController: UITableViewController {
         
         enum Language: String {
                 case english = "English"
-                case cantoneseChinese = "粵語 - 傳統漢字"
-                case mandarinChinese = "國語 - 傳統漢字"
-                case mandarinSimplifiedChinese = "普通话 - 简化字"
+                case cantonese = "粵語"
+                case mandarinChinese = "國語"
+                case mandarinChinesePutonghuaSimplified = "普通话 - 简化字"
+                case mandarinChinesePutonghuaTraditional = "普通話 - 傳統漢字"
         }
         
         var selectedLanguage: Language = .english
@@ -43,6 +44,7 @@ final class LanguageTableViewController: UITableViewController {
                 navigationController?.navigationBar.tintColor = UIColor.primary
                 
                 tableView.register(NormalTableViewCell.self, forCellReuseIdentifier: Idetifier.normalTableViewCell.rawValue)
+                tableView.register(SubtitleTableViewCell.self, forCellReuseIdentifier: Idetifier.subtitleTableViewCell.rawValue)
                 
                 clearsSelectionOnViewWillAppear = true
         }
@@ -51,7 +53,7 @@ final class LanguageTableViewController: UITableViewController {
                 return 1
         }
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-                return 4
+                return 5
         }
         
         private let space: String = " "
@@ -64,16 +66,23 @@ final class LanguageTableViewController: UITableViewController {
         }
         
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.normalTableViewCell.rawValue, for: indexPath) as? NormalTableViewCell else { return UITableViewCell() }
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.subtitleTableViewCell.rawValue, for: indexPath) as? SubtitleTableViewCell else { return UITableViewCell() }
                 switch indexPath.row {
                 case 0:
                         cell.textLabel?.text = Language.english.rawValue
+                        cell.detailTextLabel?.text = "English"
                 case 1:
-                        cell.textLabel?.text = Language.cantoneseChinese.rawValue
+                        cell.textLabel?.text = Language.mandarinChinesePutonghuaSimplified.rawValue
+                        cell.detailTextLabel?.text = "Mandarin Chinese (Simplified)"
                 case 2:
-                        cell.textLabel?.text = Language.mandarinChinese.rawValue
+                        cell.textLabel?.text = Language.mandarinChinesePutonghuaTraditional.rawValue
+                        cell.detailTextLabel?.text = "Mandarin Chinese (Traditional - China)"
                 case 3:
-                        cell.textLabel?.text = Language.mandarinSimplifiedChinese.rawValue
+                        cell.textLabel?.text = Language.mandarinChinese.rawValue
+                        cell.detailTextLabel?.text = "Mandarin Chinese (Traditional - Taiwan)"
+                case 4:
+                        cell.textLabel?.text = Language.cantonese.rawValue
+                        cell.detailTextLabel?.text = "Cantonese"
                 default:
                         break
                 }
@@ -91,17 +100,19 @@ final class LanguageTableViewController: UITableViewController {
                 case 0:
                         selectedLanguage = .english
                 case 1:
-                        selectedLanguage = .cantoneseChinese
+                        selectedLanguage = .mandarinChinesePutonghuaSimplified
                 case 2:
-                        selectedLanguage = .mandarinChinese
+                        selectedLanguage = .mandarinChinesePutonghuaTraditional
                 case 3:
-                        selectedLanguage = .mandarinSimplifiedChinese
+                        selectedLanguage = .mandarinChinese
+                case 4:
+                        selectedLanguage = .cantonese
                 default:
                         break
                 }
-                changeLanguage()
+                performLanguageChange()
         }
-        private func changeLanguage() {
+        private func performLanguageChange() {
                 let count: Int = navigationController?.viewControllers.count ?? 2
                 let settingsTVC: SettingsTableViewController? = navigationController?.viewControllers[count - 2] as? SettingsTableViewController
                 settingsTVC?.usingLanguage = selectedLanguage

@@ -22,8 +22,6 @@ class SubtitleTableViewCell: UITableViewCell {
         
         override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
                 super.init(style: .subtitle, reuseIdentifier: Idetifier.subtitleTableViewCell.rawValue)
-                detailTextLabel?.font = UIFont.systemFont(ofSize: 10)
-                detailTextLabel?.textColor = UIColor.gray
         }
         
         required init?(coder aDecoder: NSCoder) {
