@@ -59,9 +59,6 @@ final class CipherTableViewController: UITableViewController {
         
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.normalTableViewCell.rawValue, for: indexPath) as? NormalTableViewCell else { return UITableViewCell() }
-                
-                cell.textLabel?.font = UIFont(name: "LiberationMono", size: 16)
-                
                 switch indexPath.row {
                 case 0:
                         cell.textLabel?.text = Cipher.xchacha20poly1305.rawValue

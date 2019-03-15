@@ -162,9 +162,6 @@ final class AddNetubeServiceTableViewController: UITableViewController, UITextFi
                         return cell
                 case 2:
                         guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.rightDetailTableViewCell.rawValue, for: indexPath) as? RightDetailTableViewCell else { return UITableViewCell() }
-                        
-                        cell.detailTextLabel?.font = UIFont(name: "LiberationMono", size: 15)
-                        
                         switch indexPath.row {
                         case 0:
                                 cell.textLabel?.text = LocalText.Cipher

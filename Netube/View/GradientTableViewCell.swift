@@ -33,6 +33,9 @@ class GradientTableViewCell: UITableViewCell {
                 super.setSelected(selected, animated: animated)
         }
         
+        
+        // FIXME: not good
+        
         /// Gradient Color Text
         ///
         /// This function should be called **after** set up `textLabel?.text` .

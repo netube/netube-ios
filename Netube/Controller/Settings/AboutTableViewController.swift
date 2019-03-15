@@ -140,10 +140,10 @@ final class AboutTableViewController: UITableViewController {
                                 return UITableViewCell()
                         }
                 case 4:
-                        guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.gradientTableViewCell.rawValue, for: indexPath) as? GradientTableViewCell else { return UITableViewCell() }
+                        guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.normalTableViewCell.rawValue, for: indexPath) as? NormalTableViewCell else { return UITableViewCell() }
                         cell.textLabel?.text = LocalText.MadeByCantoneseInCantonia
                         cell.textLabel?.textAlignment = .center
-                        cell.setGradient()
+                        cell.textLabel?.textColor = UIColor.darkGray
                         return cell
                 default:
                         return UITableViewCell()
