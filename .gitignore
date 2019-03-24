@@ -35,3 +35,7 @@ DerivedData/
 # !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
+
+# IDEs and Editors
+/.idea
+/.vscode

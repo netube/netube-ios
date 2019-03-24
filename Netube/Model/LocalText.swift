@@ -27,7 +27,7 @@ struct LocalText {
         static let Data: String = NSLocalizedString("Data", comment: empty)
         static let Settings: String = NSLocalizedString("Settings", comment: empty)
         
-        static let NotConnected: String = NSLocalizedString("Not Connected", comment: empty)
+        static let Connect: String = NSLocalizedString("Connect", comment: empty)
         static let Connecting: String = NSLocalizedString("Connecting", comment: empty)
         static let Connected: String = NSLocalizedString("Connected", comment: empty)
         

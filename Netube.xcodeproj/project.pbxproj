@@ -51,6 +51,8 @@
 		37549D8921CF5AB400A0F3BB /* KeyExchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyExchange.swift; sourceTree = "<group>"; };
 		37549D8B21CF661900A0F3BB /* HashTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTableViewController.swift; sourceTree = "<group>"; };
 		37549D8D21CF6E3900A0F3BB /* KeyExchangeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyExchangeTableViewController.swift; sourceTree = "<group>"; };
+		377F065F223B6EDC00722867 /* yue */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = yue; path = yue.lproj/Localizable.strings; sourceTree = "<group>"; };
+		377F0660223B6EDC00722867 /* yue */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = yue; path = yue.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		378B8F4321D24EFB00525304 /* TableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellExtension.swift; sourceTree = "<group>"; };
 		378B8F4621D355F600525304 /* AddServiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddServiceTableViewController.swift; sourceTree = "<group>"; };
 		852156CF1F92156A0053BA4A /* Idetifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Idetifier.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				Base,
 				"zh-Hant",
 				"zh-Hans",
+				yue,
 			);
 			mainGroup = 859FFE5E1F8155860096B407;
 			productRefGroup = 859FFE681F8155860096B407 /* Products */;
@@ -371,6 +374,7 @@
 				855786C220D5077100A2C229 /* zh-Hant */,
 				855786C320D5077300A2C229 /* zh-Hans */,
 				855786C420D5079600A2C229 /* Base */,
+				377F0660223B6EDC00722867 /* yue */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -390,6 +394,7 @@
 				85EACB571FE7C8FE0004F911 /* zh-Hant */,
 				85D0606A1FE7D6D0003DF340 /* zh-Hans */,
 				85D0606B1FE7D768003DF340 /* en */,
+				377F065F223B6EDC00722867 /* yue */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

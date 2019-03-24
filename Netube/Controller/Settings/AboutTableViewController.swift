@@ -53,7 +53,7 @@ final class AboutTableViewController: UITableViewController {
                         // Source code, website, loopool
                         return 3
                 case 2:
-                        // ToS and Privay Policy
+                        // ToS and Privacy
                         return 2
                 case 3:
                         // Review and Share
@@ -102,7 +102,7 @@ final class AboutTableViewController: UITableViewController {
                                 return cell
                         case 2:
                                 guard let cell = tableView.dequeueReusableCell(withIdentifier: Idetifier.rightDetailTableViewCell.rawValue, for: indexPath) as? RightDetailTableViewCell else { return UITableViewCell() }
-                                cell.textLabel?.text = LocalText.FollowUsOnTwitter
+                                cell.textLabel?.text = LocalText.NetubeOnLoopool
                                 cell.detailTextLabel?.text = "↗︎"
                                 return cell
                         default:
@@ -162,7 +162,7 @@ final class AboutTableViewController: UITableViewController {
                                 let netubeWebsite: URL = URL.new("https://netube.org")
                                 open(url: netubeWebsite)
                         case 2:
-                                openTwitter()
+                                openLoopool()
                         default:
                                 break
                         }

@@ -49,10 +49,10 @@ final class AddNetubeServiceTableViewController: UITableViewController, UITextFi
         @objc private func performAdding() {
                 if (fields.filter { $0.hasCharacters }).count == fields.count {
                         newServer = Configuration(
-                                name: fields[3].text ?? "error",
-                                host: fields[0].text ?? "error",
-                                port: fields[1].text.convertToInteger,
-                                secret: fields[2].text ?? "error",
+                                name: fields[0].text ?? "error",
+                                host: fields[1].text ?? "error",
+                                port: fields[2].text.convertToInteger,
+                                secret: fields[3].text ?? "error",
                                 cipher: usingCipher,
                                 hash: usingHash,
                                 keyExchange: usingKeyExchange)
