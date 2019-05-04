@@ -24,8 +24,8 @@ final class LanguageTableViewController: UITableViewController {
                 case english = "English"
                 case cantonese = "粵語"
                 case mandarinChinese = "國語"
-                case mandarinChinesePutonghuaSimplified = "普通话 - 简化字"
-                case mandarinChinesePutonghuaTraditional = "普通話 - 傳統漢字"
+                case mandarinPutonghuaTraditionalChinese = "普通話 - 傳統漢字"
+                case mandarinPutonghuaSimplifiedChinese = "普通话 - 简化字"
         }
         
         var selectedLanguage: Language = .english
@@ -72,17 +72,17 @@ final class LanguageTableViewController: UITableViewController {
                         cell.textLabel?.text = Language.english.rawValue
                         cell.detailTextLabel?.text = "English"
                 case 1:
-                        cell.textLabel?.text = Language.mandarinChinesePutonghuaSimplified.rawValue
-                        cell.detailTextLabel?.text = "Mandarin Chinese (Simplified)"
-                case 2:
-                        cell.textLabel?.text = Language.mandarinChinesePutonghuaTraditional.rawValue
-                        cell.detailTextLabel?.text = "Mandarin Chinese (Traditional - China)"
-                case 3:
-                        cell.textLabel?.text = Language.mandarinChinese.rawValue
-                        cell.detailTextLabel?.text = "Mandarin Chinese (Traditional - Taiwan)"
-                case 4:
                         cell.textLabel?.text = Language.cantonese.rawValue
                         cell.detailTextLabel?.text = "Cantonese"
+                case 2:
+                        cell.textLabel?.text = Language.mandarinChinese.rawValue
+                        cell.detailTextLabel?.text = "Mandarin Chinese (Traditional - Taiwan)"
+                case 3:
+                        cell.textLabel?.text = Language.mandarinPutonghuaTraditionalChinese.rawValue
+                        cell.detailTextLabel?.text = "Mandarin Chinese (Traditional - China)"
+                case 4:
+                        cell.textLabel?.text = Language.mandarinPutonghuaSimplifiedChinese.rawValue
+                        cell.detailTextLabel?.text = "Mandarin Chinese (Simplified)"
                 default:
                         break
                 }
@@ -100,13 +100,13 @@ final class LanguageTableViewController: UITableViewController {
                 case 0:
                         selectedLanguage = .english
                 case 1:
-                        selectedLanguage = .mandarinChinesePutonghuaSimplified
-                case 2:
-                        selectedLanguage = .mandarinChinesePutonghuaTraditional
-                case 3:
-                        selectedLanguage = .mandarinChinese
-                case 4:
                         selectedLanguage = .cantonese
+                case 2:
+                        selectedLanguage = .mandarinChinese
+                case 3:
+                        selectedLanguage = .mandarinPutonghuaTraditionalChinese
+                case 4:
+                        selectedLanguage = .mandarinPutonghuaSimplifiedChinese
                 default:
                         break
                 }

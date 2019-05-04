@@ -24,6 +24,7 @@ extension Optional where Wrapped == String {
                         return true
                 }
                 // return !(self == nil || (self?.isEmpty ?? true))
+                // return (self != nil) && !(self?.isEmpty ?? true)
         }
         
         var convertToInteger: Int {
